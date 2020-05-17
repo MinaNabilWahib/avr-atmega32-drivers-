@@ -1,0 +1,3391 @@
+
+SWITCH_driver.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000ed0  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00000ed0  00000f44  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .stab         0000261c  00000000  00000000  00000f44  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000dac  00000000  00000000  00003560  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .comment      00000011  00000000  00000000  0000430c  2**0
+                  CONTENTS, READONLY
+  5 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00004320  2**2
+                  CONTENTS, READONLY
+  6 .debug_info   000004e6  00000000  00000000  0000435c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000004a3  00000000  00000000  00004842  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000001a  00000000  00000000  00004ce5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000196  00000000  00000000  00004cff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 aa 00 	jmp	0x154	; 0x154 <__ctors_end>
+   4:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+   8:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+   c:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  10:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  14:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  18:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  1c:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  20:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  24:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  28:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  2c:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  30:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  34:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  38:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  3c:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  40:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  44:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  48:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  4c:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  50:	0c 94 b4 00 	jmp	0x168	; 0x168 <__bad_interrupt>
+  54:	d9 02       	muls	r29, r25
+  56:	de 02       	muls	r29, r30
+  58:	e3 02       	muls	r30, r19
+  5a:	e8 02       	muls	r30, r24
+  5c:	ed 02       	muls	r30, r29
+  5e:	f2 02       	muls	r31, r18
+  60:	f7 02       	muls	r31, r23
+  62:	fc 02       	muls	r31, r28
+  64:	01 03       	mulsu	r16, r17
+  66:	06 03       	mulsu	r16, r22
+  68:	0b 03       	fmul	r16, r19
+  6a:	10 03       	mulsu	r17, r16
+  6c:	15 03       	mulsu	r17, r21
+  6e:	1a 03       	fmul	r17, r18
+  70:	1f 03       	fmul	r17, r23
+  72:	24 03       	mulsu	r18, r20
+  74:	29 03       	fmul	r18, r17
+  76:	2e 03       	fmul	r18, r22
+  78:	33 03       	mulsu	r19, r19
+  7a:	38 03       	fmul	r19, r16
+  7c:	3d 03       	fmul	r19, r21
+  7e:	42 03       	mulsu	r20, r18
+  80:	47 03       	mulsu	r20, r23
+  82:	4c 03       	fmul	r20, r20
+  84:	51 03       	mulsu	r21, r17
+  86:	56 03       	mulsu	r21, r22
+  88:	5b 03       	fmul	r21, r19
+  8a:	60 03       	mulsu	r22, r16
+  8c:	65 03       	mulsu	r22, r21
+  8e:	6a 03       	fmul	r22, r18
+  90:	6f 03       	fmul	r22, r23
+  92:	74 03       	mulsu	r23, r20
+  94:	9a 03       	fmulsu	r17, r18
+  96:	9f 03       	fmulsu	r17, r23
+  98:	a4 03       	fmuls	r18, r20
+  9a:	a9 03       	fmulsu	r18, r17
+  9c:	ae 03       	fmulsu	r18, r22
+  9e:	b3 03       	fmuls	r19, r19
+  a0:	b8 03       	fmulsu	r19, r16
+  a2:	bd 03       	fmulsu	r19, r21
+  a4:	c2 03       	fmuls	r20, r18
+  a6:	c7 03       	fmuls	r20, r23
+  a8:	cc 03       	fmulsu	r20, r20
+  aa:	d1 03       	fmuls	r21, r17
+  ac:	d6 03       	fmuls	r21, r22
+  ae:	db 03       	fmulsu	r21, r19
+  b0:	e0 03       	fmuls	r22, r16
+  b2:	e5 03       	fmuls	r22, r21
+  b4:	ea 03       	fmulsu	r22, r18
+  b6:	ef 03       	fmulsu	r22, r23
+  b8:	f4 03       	fmuls	r23, r20
+  ba:	f9 03       	fmulsu	r23, r17
+  bc:	fe 03       	fmulsu	r23, r22
+  be:	03 04       	cpc	r0, r3
+  c0:	08 04       	cpc	r0, r8
+  c2:	0d 04       	cpc	r0, r13
+  c4:	12 04       	cpc	r1, r2
+  c6:	17 04       	cpc	r1, r7
+  c8:	1c 04       	cpc	r1, r12
+  ca:	21 04       	cpc	r2, r1
+  cc:	26 04       	cpc	r2, r6
+  ce:	2b 04       	cpc	r2, r11
+  d0:	30 04       	cpc	r3, r0
+  d2:	35 04       	cpc	r3, r5
+  d4:	5b 04       	cpc	r5, r11
+  d6:	5f 04       	cpc	r5, r15
+  d8:	63 04       	cpc	r6, r3
+  da:	67 04       	cpc	r6, r7
+  dc:	6b 04       	cpc	r6, r11
+  de:	6f 04       	cpc	r6, r15
+  e0:	73 04       	cpc	r7, r3
+  e2:	77 04       	cpc	r7, r7
+  e4:	7b 04       	cpc	r7, r11
+  e6:	7f 04       	cpc	r7, r15
+  e8:	83 04       	cpc	r8, r3
+  ea:	87 04       	cpc	r8, r7
+  ec:	8b 04       	cpc	r8, r11
+  ee:	8f 04       	cpc	r8, r15
+  f0:	93 04       	cpc	r9, r3
+  f2:	97 04       	cpc	r9, r7
+  f4:	9b 04       	cpc	r9, r11
+  f6:	9f 04       	cpc	r9, r15
+  f8:	a3 04       	cpc	r10, r3
+  fa:	a7 04       	cpc	r10, r7
+  fc:	ab 04       	cpc	r10, r11
+  fe:	af 04       	cpc	r10, r15
+ 100:	b3 04       	cpc	r11, r3
+ 102:	b7 04       	cpc	r11, r7
+ 104:	bb 04       	cpc	r11, r11
+ 106:	bf 04       	cpc	r11, r15
+ 108:	c3 04       	cpc	r12, r3
+ 10a:	c7 04       	cpc	r12, r7
+ 10c:	cb 04       	cpc	r12, r11
+ 10e:	cf 04       	cpc	r12, r15
+ 110:	d3 04       	cpc	r13, r3
+ 112:	d7 04       	cpc	r13, r7
+ 114:	04 05       	cpc	r16, r4
+ 116:	14 05       	cpc	r17, r4
+ 118:	24 05       	cpc	r18, r4
+ 11a:	34 05       	cpc	r19, r4
+ 11c:	44 05       	cpc	r20, r4
+ 11e:	54 05       	cpc	r21, r4
+ 120:	64 05       	cpc	r22, r4
+ 122:	74 05       	cpc	r23, r4
+ 124:	84 05       	cpc	r24, r4
+ 126:	94 05       	cpc	r25, r4
+ 128:	a4 05       	cpc	r26, r4
+ 12a:	b4 05       	cpc	r27, r4
+ 12c:	c4 05       	cpc	r28, r4
+ 12e:	d4 05       	cpc	r29, r4
+ 130:	e4 05       	cpc	r30, r4
+ 132:	f4 05       	cpc	r31, r4
+ 134:	04 06       	cpc	r0, r20
+ 136:	14 06       	cpc	r1, r20
+ 138:	24 06       	cpc	r2, r20
+ 13a:	34 06       	cpc	r3, r20
+ 13c:	44 06       	cpc	r4, r20
+ 13e:	54 06       	cpc	r5, r20
+ 140:	64 06       	cpc	r6, r20
+ 142:	74 06       	cpc	r7, r20
+ 144:	84 06       	cpc	r8, r20
+ 146:	94 06       	cpc	r9, r20
+ 148:	a4 06       	cpc	r10, r20
+ 14a:	b4 06       	cpc	r11, r20
+ 14c:	c4 06       	cpc	r12, r20
+ 14e:	d4 06       	cpc	r13, r20
+ 150:	e4 06       	cpc	r14, r20
+ 152:	f4 06       	cpc	r15, r20
+
+00000154 <__ctors_end>:
+ 154:	11 24       	eor	r1, r1
+ 156:	1f be       	out	0x3f, r1	; 63
+ 158:	cf e5       	ldi	r28, 0x5F	; 95
+ 15a:	d8 e0       	ldi	r29, 0x08	; 8
+ 15c:	de bf       	out	0x3e, r29	; 62
+ 15e:	cd bf       	out	0x3d, r28	; 61
+ 160:	0e 94 49 07 	call	0xe92	; 0xe92 <main>
+ 164:	0c 94 66 07 	jmp	0xecc	; 0xecc <_exit>
+
+00000168 <__bad_interrupt>:
+ 168:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000016c <DIO_voidInitialize>:
+#include "BIT_MATH.h"
+#include "DIO_priv.h"
+#include "DIO_config.h"
+#include "DIO_int.h"
+
+void DIO_voidInitialize(void){
+ 16c:	cf 93       	push	r28
+ 16e:	df 93       	push	r29
+ 170:	cd b7       	in	r28, 0x3d	; 61
+ 172:	de b7       	in	r29, 0x3e	; 62
+
+	DDRA = CONCBIT(PIN_7DIR,PIN_6DIR,PIN_5DIR,PIN_4DIR,PIN_3DIR,PIN_2DIR,PIN_1DIR,PIN_0DIR);
+ 174:	8a e3       	ldi	r24, 0x3A	; 58
+ 176:	90 e0       	ldi	r25, 0x00	; 0
+ 178:	2f e0       	ldi	r18, 0x0F	; 15
+ 17a:	fc 01       	movw	r30, r24
+ 17c:	20 83       	st	Z, r18
+	DDRB = CONCBIT(PIN_15DIR,PIN_14DIR,PIN_13DIR,PIN_12DIR,PIN_11DIR,PIN_10DIR,PIN_9DIR,PIN_8DIR);
+ 17e:	87 e3       	ldi	r24, 0x37	; 55
+ 180:	90 e0       	ldi	r25, 0x00	; 0
+ 182:	fc 01       	movw	r30, r24
+ 184:	10 82       	st	Z, r1
+	DDRC = CONCBIT(PIN_23DIR,PIN_22DIR,PIN_21DIR,PIN_20DIR,PIN_19DIR,PIN_18DIR,PIN_17DIR,PIN_16DIR);
+ 186:	84 e3       	ldi	r24, 0x34	; 52
+ 188:	90 e0       	ldi	r25, 0x00	; 0
+ 18a:	fc 01       	movw	r30, r24
+ 18c:	10 82       	st	Z, r1
+	DDRD = CONCBIT(PIN_31DIR,PIN_30DIR,PIN_29DIR,PIN_28DIR,PIN_27DIR,PIN_26DIR,PIN_25DIR,PIN_24DIR);
+ 18e:	81 e3       	ldi	r24, 0x31	; 49
+ 190:	90 e0       	ldi	r25, 0x00	; 0
+ 192:	fc 01       	movw	r30, r24
+ 194:	10 82       	st	Z, r1
+
+}
+ 196:	00 00       	nop
+ 198:	df 91       	pop	r29
+ 19a:	cf 91       	pop	r28
+ 19c:	08 95       	ret
+
+0000019e <DIO_voidSetPin>:
+
+void DIO_voidSetPin(u8 PinNum,u8 Value){
+ 19e:	cf 93       	push	r28
+ 1a0:	df 93       	push	r29
+ 1a2:	00 d0       	rcall	.+0      	; 0x1a4 <DIO_voidSetPin+0x6>
+ 1a4:	cd b7       	in	r28, 0x3d	; 61
+ 1a6:	de b7       	in	r29, 0x3e	; 62
+ 1a8:	89 83       	std	Y+1, r24	; 0x01
+ 1aa:	6a 83       	std	Y+2, r22	; 0x02
+    if (Value==HIGH){
+ 1ac:	8a 81       	ldd	r24, Y+2	; 0x02
+ 1ae:	81 30       	cpi	r24, 0x01	; 1
+ 1b0:	09 f0       	breq	.+2      	; 0x1b4 <DIO_voidSetPin+0x16>
+ 1b2:	74 c0       	rjmp	.+232    	; 0x29c <DIO_voidSetPin+0xfe>
+
+        if((PinNum>=0 && PinNum<8)){
+ 1b4:	89 81       	ldd	r24, Y+1	; 0x01
+ 1b6:	88 30       	cpi	r24, 0x08	; 8
+ 1b8:	a8 f4       	brcc	.+42     	; 0x1e4 <DIO_voidSetPin+0x46>
+            SETBIT(PORTA,PinNum);
+ 1ba:	8b e3       	ldi	r24, 0x3B	; 59
+ 1bc:	90 e0       	ldi	r25, 0x00	; 0
+ 1be:	2b e3       	ldi	r18, 0x3B	; 59
+ 1c0:	30 e0       	ldi	r19, 0x00	; 0
+ 1c2:	f9 01       	movw	r30, r18
+ 1c4:	20 81       	ld	r18, Z
+ 1c6:	62 2f       	mov	r22, r18
+ 1c8:	29 81       	ldd	r18, Y+1	; 0x01
+ 1ca:	42 2f       	mov	r20, r18
+ 1cc:	50 e0       	ldi	r21, 0x00	; 0
+ 1ce:	21 e0       	ldi	r18, 0x01	; 1
+ 1d0:	30 e0       	ldi	r19, 0x00	; 0
+ 1d2:	02 c0       	rjmp	.+4      	; 0x1d8 <DIO_voidSetPin+0x3a>
+ 1d4:	22 0f       	add	r18, r18
+ 1d6:	33 1f       	adc	r19, r19
+ 1d8:	4a 95       	dec	r20
+ 1da:	e2 f7       	brpl	.-8      	; 0x1d4 <DIO_voidSetPin+0x36>
+ 1dc:	26 2b       	or	r18, r22
+ 1de:	fc 01       	movw	r30, r24
+ 1e0:	20 83       	st	Z, r18
+    	    CLRBIT(PORTD,PinNum-16);
+    	}
+
+    }
+
+}
+ 1e2:	d6 c0       	rjmp	.+428    	; 0x390 <DIO_voidSetPin+0x1f2>
+void DIO_voidSetPin(u8 PinNum,u8 Value){
+    if (Value==HIGH){
+
+        if((PinNum>=0 && PinNum<8)){
+            SETBIT(PORTA,PinNum);
+        }else if((PinNum>=8) && (PinNum<16)){
+ 1e4:	89 81       	ldd	r24, Y+1	; 0x01
+ 1e6:	88 30       	cpi	r24, 0x08	; 8
+ 1e8:	d8 f0       	brcs	.+54     	; 0x220 <DIO_voidSetPin+0x82>
+ 1ea:	89 81       	ldd	r24, Y+1	; 0x01
+ 1ec:	80 31       	cpi	r24, 0x10	; 16
+ 1ee:	c0 f4       	brcc	.+48     	; 0x220 <DIO_voidSetPin+0x82>
+        	SETBIT(PORTB,PinNum-8);
+ 1f0:	88 e3       	ldi	r24, 0x38	; 56
+ 1f2:	90 e0       	ldi	r25, 0x00	; 0
+ 1f4:	28 e3       	ldi	r18, 0x38	; 56
+ 1f6:	30 e0       	ldi	r19, 0x00	; 0
+ 1f8:	f9 01       	movw	r30, r18
+ 1fa:	20 81       	ld	r18, Z
+ 1fc:	62 2f       	mov	r22, r18
+ 1fe:	29 81       	ldd	r18, Y+1	; 0x01
+ 200:	22 2f       	mov	r18, r18
+ 202:	30 e0       	ldi	r19, 0x00	; 0
+ 204:	a9 01       	movw	r20, r18
+ 206:	48 50       	subi	r20, 0x08	; 8
+ 208:	51 09       	sbc	r21, r1
+ 20a:	21 e0       	ldi	r18, 0x01	; 1
+ 20c:	30 e0       	ldi	r19, 0x00	; 0
+ 20e:	02 c0       	rjmp	.+4      	; 0x214 <DIO_voidSetPin+0x76>
+ 210:	22 0f       	add	r18, r18
+ 212:	33 1f       	adc	r19, r19
+ 214:	4a 95       	dec	r20
+ 216:	e2 f7       	brpl	.-8      	; 0x210 <DIO_voidSetPin+0x72>
+ 218:	26 2b       	or	r18, r22
+ 21a:	fc 01       	movw	r30, r24
+ 21c:	20 83       	st	Z, r18
+ 21e:	b8 c0       	rjmp	.+368    	; 0x390 <DIO_voidSetPin+0x1f2>
+        }else if((PinNum>=16) && (PinNum<24)){
+ 220:	89 81       	ldd	r24, Y+1	; 0x01
+ 222:	80 31       	cpi	r24, 0x10	; 16
+ 224:	d8 f0       	brcs	.+54     	; 0x25c <DIO_voidSetPin+0xbe>
+ 226:	89 81       	ldd	r24, Y+1	; 0x01
+ 228:	88 31       	cpi	r24, 0x18	; 24
+ 22a:	c0 f4       	brcc	.+48     	; 0x25c <DIO_voidSetPin+0xbe>
+        	SETBIT(PORTC,PinNum-16);
+ 22c:	85 e3       	ldi	r24, 0x35	; 53
+ 22e:	90 e0       	ldi	r25, 0x00	; 0
+ 230:	25 e3       	ldi	r18, 0x35	; 53
+ 232:	30 e0       	ldi	r19, 0x00	; 0
+ 234:	f9 01       	movw	r30, r18
+ 236:	20 81       	ld	r18, Z
+ 238:	62 2f       	mov	r22, r18
+ 23a:	29 81       	ldd	r18, Y+1	; 0x01
+ 23c:	22 2f       	mov	r18, r18
+ 23e:	30 e0       	ldi	r19, 0x00	; 0
+ 240:	a9 01       	movw	r20, r18
+ 242:	40 51       	subi	r20, 0x10	; 16
+ 244:	51 09       	sbc	r21, r1
+ 246:	21 e0       	ldi	r18, 0x01	; 1
+ 248:	30 e0       	ldi	r19, 0x00	; 0
+ 24a:	02 c0       	rjmp	.+4      	; 0x250 <DIO_voidSetPin+0xb2>
+ 24c:	22 0f       	add	r18, r18
+ 24e:	33 1f       	adc	r19, r19
+ 250:	4a 95       	dec	r20
+ 252:	e2 f7       	brpl	.-8      	; 0x24c <DIO_voidSetPin+0xae>
+ 254:	26 2b       	or	r18, r22
+ 256:	fc 01       	movw	r30, r24
+ 258:	20 83       	st	Z, r18
+ 25a:	9a c0       	rjmp	.+308    	; 0x390 <DIO_voidSetPin+0x1f2>
+        }else if((PinNum>=24) && (PinNum<32)){
+ 25c:	89 81       	ldd	r24, Y+1	; 0x01
+ 25e:	88 31       	cpi	r24, 0x18	; 24
+ 260:	08 f4       	brcc	.+2      	; 0x264 <DIO_voidSetPin+0xc6>
+ 262:	96 c0       	rjmp	.+300    	; 0x390 <DIO_voidSetPin+0x1f2>
+ 264:	89 81       	ldd	r24, Y+1	; 0x01
+ 266:	80 32       	cpi	r24, 0x20	; 32
+ 268:	08 f0       	brcs	.+2      	; 0x26c <DIO_voidSetPin+0xce>
+ 26a:	92 c0       	rjmp	.+292    	; 0x390 <DIO_voidSetPin+0x1f2>
+        	SETBIT(PORTD,PinNum-16);
+ 26c:	82 e3       	ldi	r24, 0x32	; 50
+ 26e:	90 e0       	ldi	r25, 0x00	; 0
+ 270:	22 e3       	ldi	r18, 0x32	; 50
+ 272:	30 e0       	ldi	r19, 0x00	; 0
+ 274:	f9 01       	movw	r30, r18
+ 276:	20 81       	ld	r18, Z
+ 278:	62 2f       	mov	r22, r18
+ 27a:	29 81       	ldd	r18, Y+1	; 0x01
+ 27c:	22 2f       	mov	r18, r18
+ 27e:	30 e0       	ldi	r19, 0x00	; 0
+ 280:	a9 01       	movw	r20, r18
+ 282:	40 51       	subi	r20, 0x10	; 16
+ 284:	51 09       	sbc	r21, r1
+ 286:	21 e0       	ldi	r18, 0x01	; 1
+ 288:	30 e0       	ldi	r19, 0x00	; 0
+ 28a:	02 c0       	rjmp	.+4      	; 0x290 <DIO_voidSetPin+0xf2>
+ 28c:	22 0f       	add	r18, r18
+ 28e:	33 1f       	adc	r19, r19
+ 290:	4a 95       	dec	r20
+ 292:	e2 f7       	brpl	.-8      	; 0x28c <DIO_voidSetPin+0xee>
+ 294:	26 2b       	or	r18, r22
+ 296:	fc 01       	movw	r30, r24
+ 298:	20 83       	st	Z, r18
+    	    CLRBIT(PORTD,PinNum-16);
+    	}
+
+    }
+
+}
+ 29a:	7a c0       	rjmp	.+244    	; 0x390 <DIO_voidSetPin+0x1f2>
+        	SETBIT(PORTC,PinNum-16);
+        }else if((PinNum>=24) && (PinNum<32)){
+        	SETBIT(PORTD,PinNum-16);
+        }
+
+    }else if (Value==LOW){
+ 29c:	8a 81       	ldd	r24, Y+2	; 0x02
+ 29e:	88 23       	and	r24, r24
+ 2a0:	09 f0       	breq	.+2      	; 0x2a4 <DIO_voidSetPin+0x106>
+ 2a2:	76 c0       	rjmp	.+236    	; 0x390 <DIO_voidSetPin+0x1f2>
+
+    	if((PinNum>=0 && PinNum<8)){
+ 2a4:	89 81       	ldd	r24, Y+1	; 0x01
+ 2a6:	88 30       	cpi	r24, 0x08	; 8
+ 2a8:	b0 f4       	brcc	.+44     	; 0x2d6 <DIO_voidSetPin+0x138>
+    	    CLRBIT(PORTA,PinNum);
+ 2aa:	8b e3       	ldi	r24, 0x3B	; 59
+ 2ac:	90 e0       	ldi	r25, 0x00	; 0
+ 2ae:	2b e3       	ldi	r18, 0x3B	; 59
+ 2b0:	30 e0       	ldi	r19, 0x00	; 0
+ 2b2:	f9 01       	movw	r30, r18
+ 2b4:	20 81       	ld	r18, Z
+ 2b6:	62 2f       	mov	r22, r18
+ 2b8:	29 81       	ldd	r18, Y+1	; 0x01
+ 2ba:	42 2f       	mov	r20, r18
+ 2bc:	50 e0       	ldi	r21, 0x00	; 0
+ 2be:	21 e0       	ldi	r18, 0x01	; 1
+ 2c0:	30 e0       	ldi	r19, 0x00	; 0
+ 2c2:	02 c0       	rjmp	.+4      	; 0x2c8 <DIO_voidSetPin+0x12a>
+ 2c4:	22 0f       	add	r18, r18
+ 2c6:	33 1f       	adc	r19, r19
+ 2c8:	4a 95       	dec	r20
+ 2ca:	e2 f7       	brpl	.-8      	; 0x2c4 <DIO_voidSetPin+0x126>
+ 2cc:	20 95       	com	r18
+ 2ce:	26 23       	and	r18, r22
+ 2d0:	fc 01       	movw	r30, r24
+ 2d2:	20 83       	st	Z, r18
+    	    CLRBIT(PORTD,PinNum-16);
+    	}
+
+    }
+
+}
+ 2d4:	5d c0       	rjmp	.+186    	; 0x390 <DIO_voidSetPin+0x1f2>
+
+    }else if (Value==LOW){
+
+    	if((PinNum>=0 && PinNum<8)){
+    	    CLRBIT(PORTA,PinNum);
+    	}else if((PinNum>=8) && (PinNum<16)){
+ 2d6:	89 81       	ldd	r24, Y+1	; 0x01
+ 2d8:	88 30       	cpi	r24, 0x08	; 8
+ 2da:	e0 f0       	brcs	.+56     	; 0x314 <DIO_voidSetPin+0x176>
+ 2dc:	89 81       	ldd	r24, Y+1	; 0x01
+ 2de:	80 31       	cpi	r24, 0x10	; 16
+ 2e0:	c8 f4       	brcc	.+50     	; 0x314 <DIO_voidSetPin+0x176>
+    	    CLRBIT(PORTB,PinNum-8);
+ 2e2:	88 e3       	ldi	r24, 0x38	; 56
+ 2e4:	90 e0       	ldi	r25, 0x00	; 0
+ 2e6:	28 e3       	ldi	r18, 0x38	; 56
+ 2e8:	30 e0       	ldi	r19, 0x00	; 0
+ 2ea:	f9 01       	movw	r30, r18
+ 2ec:	20 81       	ld	r18, Z
+ 2ee:	62 2f       	mov	r22, r18
+ 2f0:	29 81       	ldd	r18, Y+1	; 0x01
+ 2f2:	22 2f       	mov	r18, r18
+ 2f4:	30 e0       	ldi	r19, 0x00	; 0
+ 2f6:	a9 01       	movw	r20, r18
+ 2f8:	48 50       	subi	r20, 0x08	; 8
+ 2fa:	51 09       	sbc	r21, r1
+ 2fc:	21 e0       	ldi	r18, 0x01	; 1
+ 2fe:	30 e0       	ldi	r19, 0x00	; 0
+ 300:	02 c0       	rjmp	.+4      	; 0x306 <DIO_voidSetPin+0x168>
+ 302:	22 0f       	add	r18, r18
+ 304:	33 1f       	adc	r19, r19
+ 306:	4a 95       	dec	r20
+ 308:	e2 f7       	brpl	.-8      	; 0x302 <DIO_voidSetPin+0x164>
+ 30a:	20 95       	com	r18
+ 30c:	26 23       	and	r18, r22
+ 30e:	fc 01       	movw	r30, r24
+ 310:	20 83       	st	Z, r18
+ 312:	3e c0       	rjmp	.+124    	; 0x390 <DIO_voidSetPin+0x1f2>
+    	}else if((PinNum>=16) && (PinNum<24)){
+ 314:	89 81       	ldd	r24, Y+1	; 0x01
+ 316:	80 31       	cpi	r24, 0x10	; 16
+ 318:	e0 f0       	brcs	.+56     	; 0x352 <DIO_voidSetPin+0x1b4>
+ 31a:	89 81       	ldd	r24, Y+1	; 0x01
+ 31c:	88 31       	cpi	r24, 0x18	; 24
+ 31e:	c8 f4       	brcc	.+50     	; 0x352 <DIO_voidSetPin+0x1b4>
+    	    CLRBIT(PORTC,PinNum-16);
+ 320:	85 e3       	ldi	r24, 0x35	; 53
+ 322:	90 e0       	ldi	r25, 0x00	; 0
+ 324:	25 e3       	ldi	r18, 0x35	; 53
+ 326:	30 e0       	ldi	r19, 0x00	; 0
+ 328:	f9 01       	movw	r30, r18
+ 32a:	20 81       	ld	r18, Z
+ 32c:	62 2f       	mov	r22, r18
+ 32e:	29 81       	ldd	r18, Y+1	; 0x01
+ 330:	22 2f       	mov	r18, r18
+ 332:	30 e0       	ldi	r19, 0x00	; 0
+ 334:	a9 01       	movw	r20, r18
+ 336:	40 51       	subi	r20, 0x10	; 16
+ 338:	51 09       	sbc	r21, r1
+ 33a:	21 e0       	ldi	r18, 0x01	; 1
+ 33c:	30 e0       	ldi	r19, 0x00	; 0
+ 33e:	02 c0       	rjmp	.+4      	; 0x344 <DIO_voidSetPin+0x1a6>
+ 340:	22 0f       	add	r18, r18
+ 342:	33 1f       	adc	r19, r19
+ 344:	4a 95       	dec	r20
+ 346:	e2 f7       	brpl	.-8      	; 0x340 <DIO_voidSetPin+0x1a2>
+ 348:	20 95       	com	r18
+ 34a:	26 23       	and	r18, r22
+ 34c:	fc 01       	movw	r30, r24
+ 34e:	20 83       	st	Z, r18
+ 350:	1f c0       	rjmp	.+62     	; 0x390 <DIO_voidSetPin+0x1f2>
+    	}else if((PinNum>=24) && (PinNum<32)){
+ 352:	89 81       	ldd	r24, Y+1	; 0x01
+ 354:	88 31       	cpi	r24, 0x18	; 24
+ 356:	e0 f0       	brcs	.+56     	; 0x390 <DIO_voidSetPin+0x1f2>
+ 358:	89 81       	ldd	r24, Y+1	; 0x01
+ 35a:	80 32       	cpi	r24, 0x20	; 32
+ 35c:	c8 f4       	brcc	.+50     	; 0x390 <DIO_voidSetPin+0x1f2>
+    	    CLRBIT(PORTD,PinNum-16);
+ 35e:	82 e3       	ldi	r24, 0x32	; 50
+ 360:	90 e0       	ldi	r25, 0x00	; 0
+ 362:	22 e3       	ldi	r18, 0x32	; 50
+ 364:	30 e0       	ldi	r19, 0x00	; 0
+ 366:	f9 01       	movw	r30, r18
+ 368:	20 81       	ld	r18, Z
+ 36a:	62 2f       	mov	r22, r18
+ 36c:	29 81       	ldd	r18, Y+1	; 0x01
+ 36e:	22 2f       	mov	r18, r18
+ 370:	30 e0       	ldi	r19, 0x00	; 0
+ 372:	a9 01       	movw	r20, r18
+ 374:	40 51       	subi	r20, 0x10	; 16
+ 376:	51 09       	sbc	r21, r1
+ 378:	21 e0       	ldi	r18, 0x01	; 1
+ 37a:	30 e0       	ldi	r19, 0x00	; 0
+ 37c:	02 c0       	rjmp	.+4      	; 0x382 <DIO_voidSetPin+0x1e4>
+ 37e:	22 0f       	add	r18, r18
+ 380:	33 1f       	adc	r19, r19
+ 382:	4a 95       	dec	r20
+ 384:	e2 f7       	brpl	.-8      	; 0x37e <DIO_voidSetPin+0x1e0>
+ 386:	20 95       	com	r18
+ 388:	26 23       	and	r18, r22
+ 38a:	fc 01       	movw	r30, r24
+ 38c:	20 83       	st	Z, r18
+    	}
+
+    }
+
+}
+ 38e:	00 c0       	rjmp	.+0      	; 0x390 <DIO_voidSetPin+0x1f2>
+ 390:	00 00       	nop
+ 392:	0f 90       	pop	r0
+ 394:	0f 90       	pop	r0
+ 396:	df 91       	pop	r29
+ 398:	cf 91       	pop	r28
+ 39a:	08 95       	ret
+
+0000039c <DIO_u8GetPin>:
+
+u8 DIO_u8GetPin(u8 PinNum){
+ 39c:	cf 93       	push	r28
+ 39e:	df 93       	push	r29
+ 3a0:	00 d0       	rcall	.+0      	; 0x3a2 <DIO_u8GetPin+0x6>
+ 3a2:	cd b7       	in	r28, 0x3d	; 61
+ 3a4:	de b7       	in	r29, 0x3e	; 62
+ 3a6:	8a 83       	std	Y+2, r24	; 0x02
+
+	u8 ret;
+
+	if((PinNum>=0 && PinNum<8)){
+ 3a8:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3aa:	88 30       	cpi	r24, 0x08	; 8
+ 3ac:	88 f4       	brcc	.+34     	; 0x3d0 <DIO_u8GetPin+0x34>
+	     ret= GETBIT(PINA,PinNum);
+ 3ae:	89 e3       	ldi	r24, 0x39	; 57
+ 3b0:	90 e0       	ldi	r25, 0x00	; 0
+ 3b2:	fc 01       	movw	r30, r24
+ 3b4:	80 81       	ld	r24, Z
+ 3b6:	88 2f       	mov	r24, r24
+ 3b8:	90 e0       	ldi	r25, 0x00	; 0
+ 3ba:	2a 81       	ldd	r18, Y+2	; 0x02
+ 3bc:	22 2f       	mov	r18, r18
+ 3be:	30 e0       	ldi	r19, 0x00	; 0
+ 3c0:	02 c0       	rjmp	.+4      	; 0x3c6 <DIO_u8GetPin+0x2a>
+ 3c2:	95 95       	asr	r25
+ 3c4:	87 95       	ror	r24
+ 3c6:	2a 95       	dec	r18
+ 3c8:	e2 f7       	brpl	.-8      	; 0x3c2 <DIO_u8GetPin+0x26>
+ 3ca:	81 70       	andi	r24, 0x01	; 1
+ 3cc:	89 83       	std	Y+1, r24	; 0x01
+ 3ce:	4a c0       	rjmp	.+148    	; 0x464 <__LOCK_REGION_LENGTH__+0x64>
+	}else if((PinNum>=8) && (PinNum<16)){
+ 3d0:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3d2:	88 30       	cpi	r24, 0x08	; 8
+ 3d4:	b0 f0       	brcs	.+44     	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 3d6:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3d8:	80 31       	cpi	r24, 0x10	; 16
+ 3da:	98 f4       	brcc	.+38     	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+	     ret= GETBIT(PINB,PinNum-8);
+ 3dc:	86 e3       	ldi	r24, 0x36	; 54
+ 3de:	90 e0       	ldi	r25, 0x00	; 0
+ 3e0:	fc 01       	movw	r30, r24
+ 3e2:	80 81       	ld	r24, Z
+ 3e4:	88 2f       	mov	r24, r24
+ 3e6:	90 e0       	ldi	r25, 0x00	; 0
+ 3e8:	2a 81       	ldd	r18, Y+2	; 0x02
+ 3ea:	22 2f       	mov	r18, r18
+ 3ec:	30 e0       	ldi	r19, 0x00	; 0
+ 3ee:	28 50       	subi	r18, 0x08	; 8
+ 3f0:	31 09       	sbc	r19, r1
+ 3f2:	02 c0       	rjmp	.+4      	; 0x3f8 <DIO_u8GetPin+0x5c>
+ 3f4:	95 95       	asr	r25
+ 3f6:	87 95       	ror	r24
+ 3f8:	2a 95       	dec	r18
+ 3fa:	e2 f7       	brpl	.-8      	; 0x3f4 <DIO_u8GetPin+0x58>
+ 3fc:	81 70       	andi	r24, 0x01	; 1
+ 3fe:	89 83       	std	Y+1, r24	; 0x01
+ 400:	31 c0       	rjmp	.+98     	; 0x464 <__LOCK_REGION_LENGTH__+0x64>
+	}else if((PinNum>=16) && (PinNum<24)){
+ 402:	8a 81       	ldd	r24, Y+2	; 0x02
+ 404:	80 31       	cpi	r24, 0x10	; 16
+ 406:	b0 f0       	brcs	.+44     	; 0x434 <__LOCK_REGION_LENGTH__+0x34>
+ 408:	8a 81       	ldd	r24, Y+2	; 0x02
+ 40a:	88 31       	cpi	r24, 0x18	; 24
+ 40c:	98 f4       	brcc	.+38     	; 0x434 <__LOCK_REGION_LENGTH__+0x34>
+	     ret= GETBIT(PINC,PinNum-16);
+ 40e:	83 e3       	ldi	r24, 0x33	; 51
+ 410:	90 e0       	ldi	r25, 0x00	; 0
+ 412:	fc 01       	movw	r30, r24
+ 414:	80 81       	ld	r24, Z
+ 416:	88 2f       	mov	r24, r24
+ 418:	90 e0       	ldi	r25, 0x00	; 0
+ 41a:	2a 81       	ldd	r18, Y+2	; 0x02
+ 41c:	22 2f       	mov	r18, r18
+ 41e:	30 e0       	ldi	r19, 0x00	; 0
+ 420:	20 51       	subi	r18, 0x10	; 16
+ 422:	31 09       	sbc	r19, r1
+ 424:	02 c0       	rjmp	.+4      	; 0x42a <__LOCK_REGION_LENGTH__+0x2a>
+ 426:	95 95       	asr	r25
+ 428:	87 95       	ror	r24
+ 42a:	2a 95       	dec	r18
+ 42c:	e2 f7       	brpl	.-8      	; 0x426 <__LOCK_REGION_LENGTH__+0x26>
+ 42e:	81 70       	andi	r24, 0x01	; 1
+ 430:	89 83       	std	Y+1, r24	; 0x01
+ 432:	18 c0       	rjmp	.+48     	; 0x464 <__LOCK_REGION_LENGTH__+0x64>
+	}else if((PinNum>=24) && (PinNum<32)){
+ 434:	8a 81       	ldd	r24, Y+2	; 0x02
+ 436:	88 31       	cpi	r24, 0x18	; 24
+ 438:	a8 f0       	brcs	.+42     	; 0x464 <__LOCK_REGION_LENGTH__+0x64>
+ 43a:	8a 81       	ldd	r24, Y+2	; 0x02
+ 43c:	80 32       	cpi	r24, 0x20	; 32
+ 43e:	90 f4       	brcc	.+36     	; 0x464 <__LOCK_REGION_LENGTH__+0x64>
+	     ret= GETBIT(PIND,PinNum-16);
+ 440:	80 e3       	ldi	r24, 0x30	; 48
+ 442:	90 e0       	ldi	r25, 0x00	; 0
+ 444:	fc 01       	movw	r30, r24
+ 446:	80 81       	ld	r24, Z
+ 448:	88 2f       	mov	r24, r24
+ 44a:	90 e0       	ldi	r25, 0x00	; 0
+ 44c:	2a 81       	ldd	r18, Y+2	; 0x02
+ 44e:	22 2f       	mov	r18, r18
+ 450:	30 e0       	ldi	r19, 0x00	; 0
+ 452:	20 51       	subi	r18, 0x10	; 16
+ 454:	31 09       	sbc	r19, r1
+ 456:	02 c0       	rjmp	.+4      	; 0x45c <__LOCK_REGION_LENGTH__+0x5c>
+ 458:	95 95       	asr	r25
+ 45a:	87 95       	ror	r24
+ 45c:	2a 95       	dec	r18
+ 45e:	e2 f7       	brpl	.-8      	; 0x458 <__LOCK_REGION_LENGTH__+0x58>
+ 460:	81 70       	andi	r24, 0x01	; 1
+ 462:	89 83       	std	Y+1, r24	; 0x01
+	}
+
+	return ret;
+ 464:	89 81       	ldd	r24, Y+1	; 0x01
+
+}
+ 466:	0f 90       	pop	r0
+ 468:	0f 90       	pop	r0
+ 46a:	df 91       	pop	r29
+ 46c:	cf 91       	pop	r28
+ 46e:	08 95       	ret
+
+00000470 <DIO_voidTogglePin>:
+
+void DIO_voidTogglePin(u8 PinNum){
+ 470:	cf 93       	push	r28
+ 472:	df 93       	push	r29
+ 474:	1f 92       	push	r1
+ 476:	cd b7       	in	r28, 0x3d	; 61
+ 478:	de b7       	in	r29, 0x3e	; 62
+ 47a:	89 83       	std	Y+1, r24	; 0x01
+
+	if((PinNum>=0 && PinNum<8)){
+ 47c:	89 81       	ldd	r24, Y+1	; 0x01
+ 47e:	88 30       	cpi	r24, 0x08	; 8
+ 480:	a8 f4       	brcc	.+42     	; 0x4ac <DIO_voidTogglePin+0x3c>
+		    TOGGLEBIT(PORTA,PinNum);
+ 482:	8b e3       	ldi	r24, 0x3B	; 59
+ 484:	90 e0       	ldi	r25, 0x00	; 0
+ 486:	2b e3       	ldi	r18, 0x3B	; 59
+ 488:	30 e0       	ldi	r19, 0x00	; 0
+ 48a:	f9 01       	movw	r30, r18
+ 48c:	20 81       	ld	r18, Z
+ 48e:	62 2f       	mov	r22, r18
+ 490:	29 81       	ldd	r18, Y+1	; 0x01
+ 492:	42 2f       	mov	r20, r18
+ 494:	50 e0       	ldi	r21, 0x00	; 0
+ 496:	21 e0       	ldi	r18, 0x01	; 1
+ 498:	30 e0       	ldi	r19, 0x00	; 0
+ 49a:	02 c0       	rjmp	.+4      	; 0x4a0 <DIO_voidTogglePin+0x30>
+ 49c:	22 0f       	add	r18, r18
+ 49e:	33 1f       	adc	r19, r19
+ 4a0:	4a 95       	dec	r20
+ 4a2:	e2 f7       	brpl	.-8      	; 0x49c <DIO_voidTogglePin+0x2c>
+ 4a4:	26 27       	eor	r18, r22
+ 4a6:	fc 01       	movw	r30, r24
+ 4a8:	20 83       	st	Z, r18
+		}else if((PinNum>=24) && (PinNum<32)){
+		    TOGGLEBIT(PORTD,PinNum-16);
+		}
+
+
+}
+ 4aa:	5a c0       	rjmp	.+180    	; 0x560 <DIO_voidTogglePin+0xf0>
+
+void DIO_voidTogglePin(u8 PinNum){
+
+	if((PinNum>=0 && PinNum<8)){
+		    TOGGLEBIT(PORTA,PinNum);
+		}else if((PinNum>=8) && (PinNum<16)){
+ 4ac:	89 81       	ldd	r24, Y+1	; 0x01
+ 4ae:	88 30       	cpi	r24, 0x08	; 8
+ 4b0:	d8 f0       	brcs	.+54     	; 0x4e8 <DIO_voidTogglePin+0x78>
+ 4b2:	89 81       	ldd	r24, Y+1	; 0x01
+ 4b4:	80 31       	cpi	r24, 0x10	; 16
+ 4b6:	c0 f4       	brcc	.+48     	; 0x4e8 <DIO_voidTogglePin+0x78>
+		    TOGGLEBIT(PORTB,PinNum-8);
+ 4b8:	88 e3       	ldi	r24, 0x38	; 56
+ 4ba:	90 e0       	ldi	r25, 0x00	; 0
+ 4bc:	28 e3       	ldi	r18, 0x38	; 56
+ 4be:	30 e0       	ldi	r19, 0x00	; 0
+ 4c0:	f9 01       	movw	r30, r18
+ 4c2:	20 81       	ld	r18, Z
+ 4c4:	62 2f       	mov	r22, r18
+ 4c6:	29 81       	ldd	r18, Y+1	; 0x01
+ 4c8:	22 2f       	mov	r18, r18
+ 4ca:	30 e0       	ldi	r19, 0x00	; 0
+ 4cc:	a9 01       	movw	r20, r18
+ 4ce:	48 50       	subi	r20, 0x08	; 8
+ 4d0:	51 09       	sbc	r21, r1
+ 4d2:	21 e0       	ldi	r18, 0x01	; 1
+ 4d4:	30 e0       	ldi	r19, 0x00	; 0
+ 4d6:	02 c0       	rjmp	.+4      	; 0x4dc <DIO_voidTogglePin+0x6c>
+ 4d8:	22 0f       	add	r18, r18
+ 4da:	33 1f       	adc	r19, r19
+ 4dc:	4a 95       	dec	r20
+ 4de:	e2 f7       	brpl	.-8      	; 0x4d8 <DIO_voidTogglePin+0x68>
+ 4e0:	26 27       	eor	r18, r22
+ 4e2:	fc 01       	movw	r30, r24
+ 4e4:	20 83       	st	Z, r18
+ 4e6:	3c c0       	rjmp	.+120    	; 0x560 <DIO_voidTogglePin+0xf0>
+		}else if((PinNum>=16) && (PinNum<24)){
+ 4e8:	89 81       	ldd	r24, Y+1	; 0x01
+ 4ea:	80 31       	cpi	r24, 0x10	; 16
+ 4ec:	d8 f0       	brcs	.+54     	; 0x524 <DIO_voidTogglePin+0xb4>
+ 4ee:	89 81       	ldd	r24, Y+1	; 0x01
+ 4f0:	88 31       	cpi	r24, 0x18	; 24
+ 4f2:	c0 f4       	brcc	.+48     	; 0x524 <DIO_voidTogglePin+0xb4>
+		    TOGGLEBIT(PORTC,PinNum-16);
+ 4f4:	85 e3       	ldi	r24, 0x35	; 53
+ 4f6:	90 e0       	ldi	r25, 0x00	; 0
+ 4f8:	25 e3       	ldi	r18, 0x35	; 53
+ 4fa:	30 e0       	ldi	r19, 0x00	; 0
+ 4fc:	f9 01       	movw	r30, r18
+ 4fe:	20 81       	ld	r18, Z
+ 500:	62 2f       	mov	r22, r18
+ 502:	29 81       	ldd	r18, Y+1	; 0x01
+ 504:	22 2f       	mov	r18, r18
+ 506:	30 e0       	ldi	r19, 0x00	; 0
+ 508:	a9 01       	movw	r20, r18
+ 50a:	40 51       	subi	r20, 0x10	; 16
+ 50c:	51 09       	sbc	r21, r1
+ 50e:	21 e0       	ldi	r18, 0x01	; 1
+ 510:	30 e0       	ldi	r19, 0x00	; 0
+ 512:	02 c0       	rjmp	.+4      	; 0x518 <DIO_voidTogglePin+0xa8>
+ 514:	22 0f       	add	r18, r18
+ 516:	33 1f       	adc	r19, r19
+ 518:	4a 95       	dec	r20
+ 51a:	e2 f7       	brpl	.-8      	; 0x514 <DIO_voidTogglePin+0xa4>
+ 51c:	26 27       	eor	r18, r22
+ 51e:	fc 01       	movw	r30, r24
+ 520:	20 83       	st	Z, r18
+ 522:	1e c0       	rjmp	.+60     	; 0x560 <DIO_voidTogglePin+0xf0>
+		}else if((PinNum>=24) && (PinNum<32)){
+ 524:	89 81       	ldd	r24, Y+1	; 0x01
+ 526:	88 31       	cpi	r24, 0x18	; 24
+ 528:	d8 f0       	brcs	.+54     	; 0x560 <DIO_voidTogglePin+0xf0>
+ 52a:	89 81       	ldd	r24, Y+1	; 0x01
+ 52c:	80 32       	cpi	r24, 0x20	; 32
+ 52e:	c0 f4       	brcc	.+48     	; 0x560 <DIO_voidTogglePin+0xf0>
+		    TOGGLEBIT(PORTD,PinNum-16);
+ 530:	82 e3       	ldi	r24, 0x32	; 50
+ 532:	90 e0       	ldi	r25, 0x00	; 0
+ 534:	22 e3       	ldi	r18, 0x32	; 50
+ 536:	30 e0       	ldi	r19, 0x00	; 0
+ 538:	f9 01       	movw	r30, r18
+ 53a:	20 81       	ld	r18, Z
+ 53c:	62 2f       	mov	r22, r18
+ 53e:	29 81       	ldd	r18, Y+1	; 0x01
+ 540:	22 2f       	mov	r18, r18
+ 542:	30 e0       	ldi	r19, 0x00	; 0
+ 544:	a9 01       	movw	r20, r18
+ 546:	40 51       	subi	r20, 0x10	; 16
+ 548:	51 09       	sbc	r21, r1
+ 54a:	21 e0       	ldi	r18, 0x01	; 1
+ 54c:	30 e0       	ldi	r19, 0x00	; 0
+ 54e:	02 c0       	rjmp	.+4      	; 0x554 <DIO_voidTogglePin+0xe4>
+ 550:	22 0f       	add	r18, r18
+ 552:	33 1f       	adc	r19, r19
+ 554:	4a 95       	dec	r20
+ 556:	e2 f7       	brpl	.-8      	; 0x550 <DIO_voidTogglePin+0xe0>
+ 558:	26 27       	eor	r18, r22
+ 55a:	fc 01       	movw	r30, r24
+ 55c:	20 83       	st	Z, r18
+		}
+
+
+}
+ 55e:	00 c0       	rjmp	.+0      	; 0x560 <DIO_voidTogglePin+0xf0>
+ 560:	00 00       	nop
+ 562:	0f 90       	pop	r0
+ 564:	df 91       	pop	r29
+ 566:	cf 91       	pop	r28
+ 568:	08 95       	ret
+
+0000056a <LED_voidInitialize>:
+#include "DIO_int.h"
+#include "LED_priv.h"
+#include "LED_config.h"
+#include "LED_int.h"
+
+void LED_voidInitialize(void){}
+ 56a:	cf 93       	push	r28
+ 56c:	df 93       	push	r29
+ 56e:	cd b7       	in	r28, 0x3d	; 61
+ 570:	de b7       	in	r29, 0x3e	; 62
+ 572:	00 00       	nop
+ 574:	df 91       	pop	r29
+ 576:	cf 91       	pop	r28
+ 578:	08 95       	ret
+
+0000057a <LED_voidON>:
+
+void LED_voidON(u8 LedNum){
+ 57a:	cf 93       	push	r28
+ 57c:	df 93       	push	r29
+ 57e:	1f 92       	push	r1
+ 580:	cd b7       	in	r28, 0x3d	; 61
+ 582:	de b7       	in	r29, 0x3e	; 62
+ 584:	89 83       	std	Y+1, r24	; 0x01
+
+	switch(LedNum){
+ 586:	89 81       	ldd	r24, Y+1	; 0x01
+ 588:	88 2f       	mov	r24, r24
+ 58a:	90 e0       	ldi	r25, 0x00	; 0
+ 58c:	09 2e       	mov	r0, r25
+ 58e:	00 0c       	add	r0, r0
+ 590:	aa 0b       	sbc	r26, r26
+ 592:	bb 0b       	sbc	r27, r27
+ 594:	40 e0       	ldi	r20, 0x00	; 0
+ 596:	50 e0       	ldi	r21, 0x00	; 0
+ 598:	2f e1       	ldi	r18, 0x1F	; 31
+ 59a:	30 e0       	ldi	r19, 0x00	; 0
+ 59c:	84 1b       	sub	r24, r20
+ 59e:	95 0b       	sbc	r25, r21
+ 5a0:	28 17       	cp	r18, r24
+ 5a2:	39 07       	cpc	r19, r25
+ 5a4:	08 f4       	brcc	.+2      	; 0x5a8 <LED_voidON+0x2e>
+ 5a6:	a5 c0       	rjmp	.+330    	; 0x6f2 <LED_voidON+0x178>
+ 5a8:	86 5d       	subi	r24, 0xD6	; 214
+ 5aa:	9f 4f       	sbci	r25, 0xFF	; 255
+ 5ac:	fc 01       	movw	r30, r24
+ 5ae:	0c 94 60 07 	jmp	0xec0	; 0xec0 <__tablejump2__>
+	case (LED_0):
+	    if(LED_0_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_0,HIGH);
+ 5b2:	61 e0       	ldi	r22, 0x01	; 1
+ 5b4:	80 e0       	ldi	r24, 0x00	; 0
+ 5b6:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_0_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_0,LOW);
+	    }
+	break;
+ 5ba:	9b c0       	rjmp	.+310    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_1):
+	    if(LED_1_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_1,HIGH);
+ 5bc:	61 e0       	ldi	r22, 0x01	; 1
+ 5be:	81 e0       	ldi	r24, 0x01	; 1
+ 5c0:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_1_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_1,LOW);
+	    }
+	break;
+ 5c4:	96 c0       	rjmp	.+300    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_2):
+	    if(LED_2_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_2,HIGH);
+ 5c6:	61 e0       	ldi	r22, 0x01	; 1
+ 5c8:	82 e0       	ldi	r24, 0x02	; 2
+ 5ca:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_2_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_2,LOW);
+	    }
+	break;
+ 5ce:	91 c0       	rjmp	.+290    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_3):
+	    if(LED_3_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_3,HIGH);
+ 5d0:	61 e0       	ldi	r22, 0x01	; 1
+ 5d2:	83 e0       	ldi	r24, 0x03	; 3
+ 5d4:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_3_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_3,LOW);
+	    }
+	break;
+ 5d8:	8c c0       	rjmp	.+280    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_4):
+	    if(LED_4_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_4,HIGH);
+ 5da:	61 e0       	ldi	r22, 0x01	; 1
+ 5dc:	84 e0       	ldi	r24, 0x04	; 4
+ 5de:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_4_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_4,LOW);
+	    }
+	break;
+ 5e2:	87 c0       	rjmp	.+270    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_5):
+	    if(LED_5_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_5,HIGH);
+ 5e4:	61 e0       	ldi	r22, 0x01	; 1
+ 5e6:	85 e0       	ldi	r24, 0x05	; 5
+ 5e8:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_5_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_5,LOW);
+	    }
+	break;
+ 5ec:	82 c0       	rjmp	.+260    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_6):
+	    if(LED_6_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_6,HIGH);
+ 5ee:	61 e0       	ldi	r22, 0x01	; 1
+ 5f0:	86 e0       	ldi	r24, 0x06	; 6
+ 5f2:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_6_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_6,LOW);
+	    }
+	break;
+ 5f6:	7d c0       	rjmp	.+250    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_7):
+	    if(LED_7_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_7,HIGH);
+ 5f8:	61 e0       	ldi	r22, 0x01	; 1
+ 5fa:	87 e0       	ldi	r24, 0x07	; 7
+ 5fc:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_7_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_7,LOW);
+	    }
+	break;
+ 600:	78 c0       	rjmp	.+240    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_8):
+	    if(LED_8_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_8,HIGH);
+ 602:	61 e0       	ldi	r22, 0x01	; 1
+ 604:	88 e0       	ldi	r24, 0x08	; 8
+ 606:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_8_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_8,LOW);
+	    }
+	break;
+ 60a:	73 c0       	rjmp	.+230    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_9):
+	    if(LED_9_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_9,HIGH);
+ 60c:	61 e0       	ldi	r22, 0x01	; 1
+ 60e:	89 e0       	ldi	r24, 0x09	; 9
+ 610:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_9_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_9,LOW);
+	    }
+	break;
+ 614:	6e c0       	rjmp	.+220    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_10):
+	    if(LED_10_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_10,HIGH);
+ 616:	61 e0       	ldi	r22, 0x01	; 1
+ 618:	8a e0       	ldi	r24, 0x0A	; 10
+ 61a:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_10_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_10,LOW);
+	    }
+	break;
+ 61e:	69 c0       	rjmp	.+210    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_11):
+	    if(LED_11_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_11,HIGH);
+ 620:	61 e0       	ldi	r22, 0x01	; 1
+ 622:	8b e0       	ldi	r24, 0x0B	; 11
+ 624:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_11_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_11,LOW);
+	    }
+	break;
+ 628:	64 c0       	rjmp	.+200    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_12):
+	    if(LED_12_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_12,HIGH);
+ 62a:	61 e0       	ldi	r22, 0x01	; 1
+ 62c:	8c e0       	ldi	r24, 0x0C	; 12
+ 62e:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_12_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_12,LOW);
+	    }
+	break;
+ 632:	5f c0       	rjmp	.+190    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_13):
+	    if(LED_13_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_13,HIGH);
+ 634:	61 e0       	ldi	r22, 0x01	; 1
+ 636:	8d e0       	ldi	r24, 0x0D	; 13
+ 638:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_13_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_13,LOW);
+	    }
+	break;
+ 63c:	5a c0       	rjmp	.+180    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_14):
+	    if(LED_14_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_14,HIGH);
+ 63e:	61 e0       	ldi	r22, 0x01	; 1
+ 640:	8e e0       	ldi	r24, 0x0E	; 14
+ 642:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_14_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_14,LOW);
+	    }
+	break;
+ 646:	55 c0       	rjmp	.+170    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_15):
+	    if(LED_15_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_15,HIGH);
+ 648:	61 e0       	ldi	r22, 0x01	; 1
+ 64a:	8f e0       	ldi	r24, 0x0F	; 15
+ 64c:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_15_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_15,LOW);
+	    }
+	break;
+ 650:	50 c0       	rjmp	.+160    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_16):
+	    if(LED_16_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_16,HIGH);
+ 652:	61 e0       	ldi	r22, 0x01	; 1
+ 654:	80 e1       	ldi	r24, 0x10	; 16
+ 656:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_16_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_16,LOW);
+	    }
+	break;
+ 65a:	4b c0       	rjmp	.+150    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_17):
+	    if(LED_17_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_17,HIGH);
+ 65c:	61 e0       	ldi	r22, 0x01	; 1
+ 65e:	81 e1       	ldi	r24, 0x11	; 17
+ 660:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_17_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_17,LOW);
+	    }
+	break;
+ 664:	46 c0       	rjmp	.+140    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_18):
+	    if(LED_18_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_18,HIGH);
+ 666:	61 e0       	ldi	r22, 0x01	; 1
+ 668:	82 e1       	ldi	r24, 0x12	; 18
+ 66a:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_18_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_18,LOW);
+	    }
+	break;
+ 66e:	41 c0       	rjmp	.+130    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_19):
+	    if(LED_19_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_19,HIGH);
+ 670:	61 e0       	ldi	r22, 0x01	; 1
+ 672:	83 e1       	ldi	r24, 0x13	; 19
+ 674:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_19_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_19,LOW);
+	    }
+	break;
+ 678:	3c c0       	rjmp	.+120    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_20):
+	    if(LED_20_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_20,HIGH);
+ 67a:	61 e0       	ldi	r22, 0x01	; 1
+ 67c:	84 e1       	ldi	r24, 0x14	; 20
+ 67e:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_20_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_20,LOW);
+	    }
+	break;
+ 682:	37 c0       	rjmp	.+110    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_21):
+	    if(LED_21_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_21,HIGH);
+ 684:	61 e0       	ldi	r22, 0x01	; 1
+ 686:	85 e1       	ldi	r24, 0x15	; 21
+ 688:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_21_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_21,LOW);
+	    }
+	break;
+ 68c:	32 c0       	rjmp	.+100    	; 0x6f2 <LED_voidON+0x178>
+	case (LED_22):
+	    if(LED_22_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_22,HIGH);
+ 68e:	61 e0       	ldi	r22, 0x01	; 1
+ 690:	86 e1       	ldi	r24, 0x16	; 22
+ 692:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_22_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_22,LOW);
+	    }
+	break;
+ 696:	2d c0       	rjmp	.+90     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_23):
+	    if(LED_23_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_23,HIGH);
+ 698:	61 e0       	ldi	r22, 0x01	; 1
+ 69a:	87 e1       	ldi	r24, 0x17	; 23
+ 69c:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_23_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_23,LOW);
+	    }
+	break;
+ 6a0:	28 c0       	rjmp	.+80     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_24):
+	    if(LED_24_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_24,HIGH);
+ 6a2:	61 e0       	ldi	r22, 0x01	; 1
+ 6a4:	88 e1       	ldi	r24, 0x18	; 24
+ 6a6:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_24_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_24,LOW);
+	    }
+	break;
+ 6aa:	23 c0       	rjmp	.+70     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_25):
+	    if(LED_25_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_25,HIGH);
+ 6ac:	61 e0       	ldi	r22, 0x01	; 1
+ 6ae:	89 e1       	ldi	r24, 0x19	; 25
+ 6b0:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_25_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_25,LOW);
+	    }
+	break;
+ 6b4:	1e c0       	rjmp	.+60     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_26):
+	    if(LED_26_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_26,HIGH);
+ 6b6:	61 e0       	ldi	r22, 0x01	; 1
+ 6b8:	8a e1       	ldi	r24, 0x1A	; 26
+ 6ba:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_26_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_26,LOW);
+	    }
+	break;
+ 6be:	19 c0       	rjmp	.+50     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_27):
+	    if(LED_27_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_27,HIGH);
+ 6c0:	61 e0       	ldi	r22, 0x01	; 1
+ 6c2:	8b e1       	ldi	r24, 0x1B	; 27
+ 6c4:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_27_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_27,LOW);
+	    }
+	break;
+ 6c8:	14 c0       	rjmp	.+40     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_28):
+	    if(LED_28_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_28,HIGH);
+ 6ca:	61 e0       	ldi	r22, 0x01	; 1
+ 6cc:	8c e1       	ldi	r24, 0x1C	; 28
+ 6ce:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_28_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_28,LOW);
+	    }
+	break;
+ 6d2:	0f c0       	rjmp	.+30     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_29):
+	    if(LED_29_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_29,HIGH);
+ 6d4:	61 e0       	ldi	r22, 0x01	; 1
+ 6d6:	8d e1       	ldi	r24, 0x1D	; 29
+ 6d8:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_29_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_29,LOW);
+	    }
+	break;
+ 6dc:	0a c0       	rjmp	.+20     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_30):
+	    if(LED_30_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_30,HIGH);
+ 6de:	61 e0       	ldi	r22, 0x01	; 1
+ 6e0:	8e e1       	ldi	r24, 0x1E	; 30
+ 6e2:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_30_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_30,LOW);
+	    }
+	break;
+ 6e6:	05 c0       	rjmp	.+10     	; 0x6f2 <LED_voidON+0x178>
+	case (LED_31):
+	    if(LED_31_mode==FORWARD){
+	        DIO_voidSetPin(LEDPIN_31,HIGH);
+ 6e8:	61 e0       	ldi	r22, 0x01	; 1
+ 6ea:	8f e1       	ldi	r24, 0x1F	; 31
+ 6ec:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+	    }else if(LED_31_mode==REVERSE){
+	        DIO_voidSetPin(LEDPIN_31,LOW);
+	    }
+	break;
+ 6f0:	00 00       	nop
+
+
+	}
+
+}
+ 6f2:	00 00       	nop
+ 6f4:	0f 90       	pop	r0
+ 6f6:	df 91       	pop	r29
+ 6f8:	cf 91       	pop	r28
+ 6fa:	08 95       	ret
+
+000006fc <LED_voidOff>:
+
+void LED_voidOff(u8 LedNum){
+ 6fc:	cf 93       	push	r28
+ 6fe:	df 93       	push	r29
+ 700:	1f 92       	push	r1
+ 702:	cd b7       	in	r28, 0x3d	; 61
+ 704:	de b7       	in	r29, 0x3e	; 62
+ 706:	89 83       	std	Y+1, r24	; 0x01
+
+	switch(LedNum){
+ 708:	89 81       	ldd	r24, Y+1	; 0x01
+ 70a:	88 2f       	mov	r24, r24
+ 70c:	90 e0       	ldi	r25, 0x00	; 0
+ 70e:	09 2e       	mov	r0, r25
+ 710:	00 0c       	add	r0, r0
+ 712:	aa 0b       	sbc	r26, r26
+ 714:	bb 0b       	sbc	r27, r27
+ 716:	40 e0       	ldi	r20, 0x00	; 0
+ 718:	50 e0       	ldi	r21, 0x00	; 0
+ 71a:	2f e1       	ldi	r18, 0x1F	; 31
+ 71c:	30 e0       	ldi	r19, 0x00	; 0
+ 71e:	84 1b       	sub	r24, r20
+ 720:	95 0b       	sbc	r25, r21
+ 722:	28 17       	cp	r18, r24
+ 724:	39 07       	cpc	r19, r25
+ 726:	08 f4       	brcc	.+2      	; 0x72a <LED_voidOff+0x2e>
+ 728:	a5 c0       	rjmp	.+330    	; 0x874 <__stack+0x15>
+ 72a:	86 5b       	subi	r24, 0xB6	; 182
+ 72c:	9f 4f       	sbci	r25, 0xFF	; 255
+ 72e:	fc 01       	movw	r30, r24
+ 730:	0c 94 60 07 	jmp	0xec0	; 0xec0 <__tablejump2__>
+
+    case (LED_0):
+        if(LED_0_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_0,LOW);
+ 734:	60 e0       	ldi	r22, 0x00	; 0
+ 736:	80 e0       	ldi	r24, 0x00	; 0
+ 738:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_0_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_0,HIGH);
+        }
+    break;
+ 73c:	9b c0       	rjmp	.+310    	; 0x874 <__stack+0x15>
+    case (LED_1):
+        if(LED_1_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_1,LOW);
+ 73e:	60 e0       	ldi	r22, 0x00	; 0
+ 740:	81 e0       	ldi	r24, 0x01	; 1
+ 742:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_1_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_1,HIGH);
+        }
+    break;
+ 746:	96 c0       	rjmp	.+300    	; 0x874 <__stack+0x15>
+    case (LED_2):
+        if(LED_2_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_2,LOW);
+ 748:	60 e0       	ldi	r22, 0x00	; 0
+ 74a:	82 e0       	ldi	r24, 0x02	; 2
+ 74c:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_2_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_2,HIGH);
+        }
+    break;
+ 750:	91 c0       	rjmp	.+290    	; 0x874 <__stack+0x15>
+    case (LED_3):
+        if(LED_3_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_3,LOW);
+ 752:	60 e0       	ldi	r22, 0x00	; 0
+ 754:	83 e0       	ldi	r24, 0x03	; 3
+ 756:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_3_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_3,HIGH);
+        }
+    break;
+ 75a:	8c c0       	rjmp	.+280    	; 0x874 <__stack+0x15>
+    case (LED_4):
+        if(LED_4_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_4,LOW);
+ 75c:	60 e0       	ldi	r22, 0x00	; 0
+ 75e:	84 e0       	ldi	r24, 0x04	; 4
+ 760:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_4_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_4,HIGH);
+        }
+    break;
+ 764:	87 c0       	rjmp	.+270    	; 0x874 <__stack+0x15>
+    case (LED_5):
+        if(LED_5_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_5,LOW);
+ 766:	60 e0       	ldi	r22, 0x00	; 0
+ 768:	85 e0       	ldi	r24, 0x05	; 5
+ 76a:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_5_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_5,HIGH);
+        }
+    break;
+ 76e:	82 c0       	rjmp	.+260    	; 0x874 <__stack+0x15>
+    case (LED_6):
+        if(LED_6_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_6,LOW);
+ 770:	60 e0       	ldi	r22, 0x00	; 0
+ 772:	86 e0       	ldi	r24, 0x06	; 6
+ 774:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_6_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_6,HIGH);
+        }
+    break;
+ 778:	7d c0       	rjmp	.+250    	; 0x874 <__stack+0x15>
+    case (LED_7):
+        if(LED_7_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_7,LOW);
+ 77a:	60 e0       	ldi	r22, 0x00	; 0
+ 77c:	87 e0       	ldi	r24, 0x07	; 7
+ 77e:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_7_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_7,HIGH);
+        }
+    break;
+ 782:	78 c0       	rjmp	.+240    	; 0x874 <__stack+0x15>
+    case (LED_8):
+        if(LED_8_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_8,LOW);
+ 784:	60 e0       	ldi	r22, 0x00	; 0
+ 786:	88 e0       	ldi	r24, 0x08	; 8
+ 788:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_8_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_8,HIGH);
+        }
+    break;
+ 78c:	73 c0       	rjmp	.+230    	; 0x874 <__stack+0x15>
+    case (LED_9):
+        if(LED_9_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_9,LOW);
+ 78e:	60 e0       	ldi	r22, 0x00	; 0
+ 790:	89 e0       	ldi	r24, 0x09	; 9
+ 792:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_9_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_9,HIGH);
+        }
+    break;
+ 796:	6e c0       	rjmp	.+220    	; 0x874 <__stack+0x15>
+    case (LED_10):
+        if(LED_10_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_10,LOW);
+ 798:	60 e0       	ldi	r22, 0x00	; 0
+ 79a:	8a e0       	ldi	r24, 0x0A	; 10
+ 79c:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_10_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_10,HIGH);
+        }
+    break;
+ 7a0:	69 c0       	rjmp	.+210    	; 0x874 <__stack+0x15>
+    case (LED_11):
+        if(LED_11_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_11,LOW);
+ 7a2:	60 e0       	ldi	r22, 0x00	; 0
+ 7a4:	8b e0       	ldi	r24, 0x0B	; 11
+ 7a6:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_11_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_11,HIGH);
+        }
+    break;
+ 7aa:	64 c0       	rjmp	.+200    	; 0x874 <__stack+0x15>
+    case (LED_12):
+        if(LED_12_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_12,LOW);
+ 7ac:	60 e0       	ldi	r22, 0x00	; 0
+ 7ae:	8c e0       	ldi	r24, 0x0C	; 12
+ 7b0:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_12_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_12,HIGH);
+        }
+    break;
+ 7b4:	5f c0       	rjmp	.+190    	; 0x874 <__stack+0x15>
+    case (LED_13):
+        if(LED_13_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_13,LOW);
+ 7b6:	60 e0       	ldi	r22, 0x00	; 0
+ 7b8:	8d e0       	ldi	r24, 0x0D	; 13
+ 7ba:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_13_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_13,HIGH);
+        }
+    break;
+ 7be:	5a c0       	rjmp	.+180    	; 0x874 <__stack+0x15>
+    case (LED_14):
+        if(LED_14_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_14,LOW);
+ 7c0:	60 e0       	ldi	r22, 0x00	; 0
+ 7c2:	8e e0       	ldi	r24, 0x0E	; 14
+ 7c4:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_14_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_14,HIGH);
+        }
+    break;
+ 7c8:	55 c0       	rjmp	.+170    	; 0x874 <__stack+0x15>
+    case (LED_15):
+        if(LED_15_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_15,LOW);
+ 7ca:	60 e0       	ldi	r22, 0x00	; 0
+ 7cc:	8f e0       	ldi	r24, 0x0F	; 15
+ 7ce:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_15_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_15,HIGH);
+        }
+    break;
+ 7d2:	50 c0       	rjmp	.+160    	; 0x874 <__stack+0x15>
+    case (LED_16):
+        if(LED_16_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_16,LOW);
+ 7d4:	60 e0       	ldi	r22, 0x00	; 0
+ 7d6:	80 e1       	ldi	r24, 0x10	; 16
+ 7d8:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_16_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_16,HIGH);
+        }
+    break;
+ 7dc:	4b c0       	rjmp	.+150    	; 0x874 <__stack+0x15>
+    case (LED_17):
+        if(LED_17_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_17,LOW);
+ 7de:	60 e0       	ldi	r22, 0x00	; 0
+ 7e0:	81 e1       	ldi	r24, 0x11	; 17
+ 7e2:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_17_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_17,HIGH);
+        }
+    break;
+ 7e6:	46 c0       	rjmp	.+140    	; 0x874 <__stack+0x15>
+    case (LED_18):
+        if(LED_18_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_18,LOW);
+ 7e8:	60 e0       	ldi	r22, 0x00	; 0
+ 7ea:	82 e1       	ldi	r24, 0x12	; 18
+ 7ec:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_18_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_18,HIGH);
+        }
+    break;
+ 7f0:	41 c0       	rjmp	.+130    	; 0x874 <__stack+0x15>
+    case (LED_19):
+        if(LED_19_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_19,LOW);
+ 7f2:	60 e0       	ldi	r22, 0x00	; 0
+ 7f4:	83 e1       	ldi	r24, 0x13	; 19
+ 7f6:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_19_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_19,HIGH);
+        }
+    break;
+ 7fa:	3c c0       	rjmp	.+120    	; 0x874 <__stack+0x15>
+    case (LED_20):
+        if(LED_20_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_20,LOW);
+ 7fc:	60 e0       	ldi	r22, 0x00	; 0
+ 7fe:	84 e1       	ldi	r24, 0x14	; 20
+ 800:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_20_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_20,HIGH);
+        }
+    break;
+ 804:	37 c0       	rjmp	.+110    	; 0x874 <__stack+0x15>
+    case (LED_21):
+        if(LED_21_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_21,LOW);
+ 806:	60 e0       	ldi	r22, 0x00	; 0
+ 808:	85 e1       	ldi	r24, 0x15	; 21
+ 80a:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_21_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_21,HIGH);
+        }
+    break;
+ 80e:	32 c0       	rjmp	.+100    	; 0x874 <__stack+0x15>
+    case (LED_22):
+        if(LED_22_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_22,LOW);
+ 810:	60 e0       	ldi	r22, 0x00	; 0
+ 812:	86 e1       	ldi	r24, 0x16	; 22
+ 814:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_22_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_22,HIGH);
+        }
+    break;
+ 818:	2d c0       	rjmp	.+90     	; 0x874 <__stack+0x15>
+    case (LED_23):
+        if(LED_23_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_23,LOW);
+ 81a:	60 e0       	ldi	r22, 0x00	; 0
+ 81c:	87 e1       	ldi	r24, 0x17	; 23
+ 81e:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_23_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_23,HIGH);
+        }
+    break;
+ 822:	28 c0       	rjmp	.+80     	; 0x874 <__stack+0x15>
+    case (LED_24):
+        if(LED_24_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_24,LOW);
+ 824:	60 e0       	ldi	r22, 0x00	; 0
+ 826:	88 e1       	ldi	r24, 0x18	; 24
+ 828:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_24_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_24,HIGH);
+        }
+    break;
+ 82c:	23 c0       	rjmp	.+70     	; 0x874 <__stack+0x15>
+    case (LED_25):
+        if(LED_25_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_25,LOW);
+ 82e:	60 e0       	ldi	r22, 0x00	; 0
+ 830:	89 e1       	ldi	r24, 0x19	; 25
+ 832:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_25_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_25,HIGH);
+        }
+    break;
+ 836:	1e c0       	rjmp	.+60     	; 0x874 <__stack+0x15>
+    case (LED_26):
+        if(LED_26_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_26,LOW);
+ 838:	60 e0       	ldi	r22, 0x00	; 0
+ 83a:	8a e1       	ldi	r24, 0x1A	; 26
+ 83c:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_26_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_26,HIGH);
+        }
+    break;
+ 840:	19 c0       	rjmp	.+50     	; 0x874 <__stack+0x15>
+    case (LED_27):
+        if(LED_27_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_27,LOW);
+ 842:	60 e0       	ldi	r22, 0x00	; 0
+ 844:	8b e1       	ldi	r24, 0x1B	; 27
+ 846:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_27_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_27,HIGH);
+        }
+    break;
+ 84a:	14 c0       	rjmp	.+40     	; 0x874 <__stack+0x15>
+    case (LED_28):
+        if(LED_28_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_28,LOW);
+ 84c:	60 e0       	ldi	r22, 0x00	; 0
+ 84e:	8c e1       	ldi	r24, 0x1C	; 28
+ 850:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_28_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_28,HIGH);
+        }
+    break;
+ 854:	0f c0       	rjmp	.+30     	; 0x874 <__stack+0x15>
+    case (LED_29):
+        if(LED_29_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_29,LOW);
+ 856:	60 e0       	ldi	r22, 0x00	; 0
+ 858:	8d e1       	ldi	r24, 0x1D	; 29
+ 85a:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_29_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_29,HIGH);
+        }
+    break;
+ 85e:	0a c0       	rjmp	.+20     	; 0x874 <__stack+0x15>
+    case (LED_30):
+        if(LED_30_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_30,LOW);
+ 860:	60 e0       	ldi	r22, 0x00	; 0
+ 862:	8e e1       	ldi	r24, 0x1E	; 30
+ 864:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_30_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_30,HIGH);
+        }
+    break;
+ 868:	05 c0       	rjmp	.+10     	; 0x874 <__stack+0x15>
+    case (LED_31):
+        if(LED_31_mode==FORWARD){
+            DIO_voidSetPin(LEDPIN_31,LOW);
+ 86a:	60 e0       	ldi	r22, 0x00	; 0
+ 86c:	8f e1       	ldi	r24, 0x1F	; 31
+ 86e:	0e 94 cf 00 	call	0x19e	; 0x19e <DIO_voidSetPin>
+        }else if(LED_31_mode==REVERSE){
+            DIO_voidSetPin(LEDPIN_31,HIGH);
+        }
+    break;
+ 872:	00 00       	nop
+
+	}
+
+
+}
+ 874:	00 00       	nop
+ 876:	0f 90       	pop	r0
+ 878:	df 91       	pop	r29
+ 87a:	cf 91       	pop	r28
+ 87c:	08 95       	ret
+
+0000087e <LED_voidToggle>:
+
+void LED_voidToggle(u8 LedNum){
+ 87e:	cf 93       	push	r28
+ 880:	df 93       	push	r29
+ 882:	1f 92       	push	r1
+ 884:	cd b7       	in	r28, 0x3d	; 61
+ 886:	de b7       	in	r29, 0x3e	; 62
+ 888:	89 83       	std	Y+1, r24	; 0x01
+
+	switch(LedNum){
+ 88a:	89 81       	ldd	r24, Y+1	; 0x01
+ 88c:	88 2f       	mov	r24, r24
+ 88e:	90 e0       	ldi	r25, 0x00	; 0
+ 890:	09 2e       	mov	r0, r25
+ 892:	00 0c       	add	r0, r0
+ 894:	aa 0b       	sbc	r26, r26
+ 896:	bb 0b       	sbc	r27, r27
+ 898:	40 e0       	ldi	r20, 0x00	; 0
+ 89a:	50 e0       	ldi	r21, 0x00	; 0
+ 89c:	2f e1       	ldi	r18, 0x1F	; 31
+ 89e:	30 e0       	ldi	r19, 0x00	; 0
+ 8a0:	84 1b       	sub	r24, r20
+ 8a2:	95 0b       	sbc	r25, r21
+ 8a4:	28 17       	cp	r18, r24
+ 8a6:	39 07       	cpc	r19, r25
+ 8a8:	08 f4       	brcc	.+2      	; 0x8ac <LED_voidToggle+0x2e>
+ 8aa:	85 c0       	rjmp	.+266    	; 0x9b6 <LED_voidToggle+0x138>
+ 8ac:	86 59       	subi	r24, 0x96	; 150
+ 8ae:	9f 4f       	sbci	r25, 0xFF	; 255
+ 8b0:	fc 01       	movw	r30, r24
+ 8b2:	0c 94 60 07 	jmp	0xec0	; 0xec0 <__tablejump2__>
+
+        	case (LED_0):
+        		DIO_voidTogglePin(LEDPIN_0);
+ 8b6:	80 e0       	ldi	r24, 0x00	; 0
+ 8b8:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8bc:	7c c0       	rjmp	.+248    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_1):
+        		DIO_voidTogglePin(LEDPIN_1);
+ 8be:	81 e0       	ldi	r24, 0x01	; 1
+ 8c0:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8c4:	78 c0       	rjmp	.+240    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_2):
+        		DIO_voidTogglePin(LEDPIN_2);
+ 8c6:	82 e0       	ldi	r24, 0x02	; 2
+ 8c8:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8cc:	74 c0       	rjmp	.+232    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_3):
+        		DIO_voidTogglePin(LEDPIN_3);
+ 8ce:	83 e0       	ldi	r24, 0x03	; 3
+ 8d0:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8d4:	70 c0       	rjmp	.+224    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_4):
+        		DIO_voidTogglePin(LEDPIN_4);
+ 8d6:	84 e0       	ldi	r24, 0x04	; 4
+ 8d8:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8dc:	6c c0       	rjmp	.+216    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_5):
+        		DIO_voidTogglePin(LEDPIN_5);
+ 8de:	85 e0       	ldi	r24, 0x05	; 5
+ 8e0:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8e4:	68 c0       	rjmp	.+208    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_6):
+        		DIO_voidTogglePin(LEDPIN_6);
+ 8e6:	86 e0       	ldi	r24, 0x06	; 6
+ 8e8:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8ec:	64 c0       	rjmp	.+200    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_7):
+        		DIO_voidTogglePin(LEDPIN_7);
+ 8ee:	87 e0       	ldi	r24, 0x07	; 7
+ 8f0:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8f4:	60 c0       	rjmp	.+192    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_8):
+        		DIO_voidTogglePin(LEDPIN_8);
+ 8f6:	88 e0       	ldi	r24, 0x08	; 8
+ 8f8:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 8fc:	5c c0       	rjmp	.+184    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_9):
+        		DIO_voidTogglePin(LEDPIN_9);
+ 8fe:	89 e0       	ldi	r24, 0x09	; 9
+ 900:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 904:	58 c0       	rjmp	.+176    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_10):
+        		DIO_voidTogglePin(LEDPIN_10);
+ 906:	8a e0       	ldi	r24, 0x0A	; 10
+ 908:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 90c:	54 c0       	rjmp	.+168    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_11):
+        		DIO_voidTogglePin(LEDPIN_11);
+ 90e:	8b e0       	ldi	r24, 0x0B	; 11
+ 910:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 914:	50 c0       	rjmp	.+160    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_12):
+        		DIO_voidTogglePin(LEDPIN_12);
+ 916:	8c e0       	ldi	r24, 0x0C	; 12
+ 918:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 91c:	4c c0       	rjmp	.+152    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_13):
+        		DIO_voidTogglePin(LEDPIN_13);
+ 91e:	8d e0       	ldi	r24, 0x0D	; 13
+ 920:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 924:	48 c0       	rjmp	.+144    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_14):
+        		DIO_voidTogglePin(LEDPIN_14);
+ 926:	8e e0       	ldi	r24, 0x0E	; 14
+ 928:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 92c:	44 c0       	rjmp	.+136    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_15):
+        		DIO_voidTogglePin(LEDPIN_15);
+ 92e:	8f e0       	ldi	r24, 0x0F	; 15
+ 930:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 934:	40 c0       	rjmp	.+128    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_16):
+        		DIO_voidTogglePin(LEDPIN_16);
+ 936:	80 e1       	ldi	r24, 0x10	; 16
+ 938:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 93c:	3c c0       	rjmp	.+120    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_17):
+        		DIO_voidTogglePin(LEDPIN_17);
+ 93e:	81 e1       	ldi	r24, 0x11	; 17
+ 940:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 944:	38 c0       	rjmp	.+112    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_18):
+        		DIO_voidTogglePin(LEDPIN_18);
+ 946:	82 e1       	ldi	r24, 0x12	; 18
+ 948:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 94c:	34 c0       	rjmp	.+104    	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_19):
+        		DIO_voidTogglePin(LEDPIN_19);
+ 94e:	83 e1       	ldi	r24, 0x13	; 19
+ 950:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 954:	30 c0       	rjmp	.+96     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_20):
+        		DIO_voidTogglePin(LEDPIN_20);
+ 956:	84 e1       	ldi	r24, 0x14	; 20
+ 958:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 95c:	2c c0       	rjmp	.+88     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_21):
+        		DIO_voidTogglePin(LEDPIN_21);
+ 95e:	85 e1       	ldi	r24, 0x15	; 21
+ 960:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 964:	28 c0       	rjmp	.+80     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_22):
+        		DIO_voidTogglePin(LEDPIN_22);
+ 966:	86 e1       	ldi	r24, 0x16	; 22
+ 968:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 96c:	24 c0       	rjmp	.+72     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_23):
+        		DIO_voidTogglePin(LEDPIN_23);
+ 96e:	87 e1       	ldi	r24, 0x17	; 23
+ 970:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 974:	20 c0       	rjmp	.+64     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_24):
+        		DIO_voidTogglePin(LEDPIN_24);
+ 976:	88 e1       	ldi	r24, 0x18	; 24
+ 978:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 97c:	1c c0       	rjmp	.+56     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_25):
+        		DIO_voidTogglePin(LEDPIN_25);
+ 97e:	89 e1       	ldi	r24, 0x19	; 25
+ 980:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 984:	18 c0       	rjmp	.+48     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_26):
+        		DIO_voidTogglePin(LEDPIN_26);
+ 986:	8a e1       	ldi	r24, 0x1A	; 26
+ 988:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 98c:	14 c0       	rjmp	.+40     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_27):
+        		DIO_voidTogglePin(LEDPIN_27);
+ 98e:	8b e1       	ldi	r24, 0x1B	; 27
+ 990:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 994:	10 c0       	rjmp	.+32     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_28):
+        		DIO_voidTogglePin(LEDPIN_28);
+ 996:	8c e1       	ldi	r24, 0x1C	; 28
+ 998:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 99c:	0c c0       	rjmp	.+24     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_29):
+        		DIO_voidTogglePin(LEDPIN_29);
+ 99e:	8d e1       	ldi	r24, 0x1D	; 29
+ 9a0:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 9a4:	08 c0       	rjmp	.+16     	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_30):
+        		DIO_voidTogglePin(LEDPIN_30);
+ 9a6:	8e e1       	ldi	r24, 0x1E	; 30
+ 9a8:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 9ac:	04 c0       	rjmp	.+8      	; 0x9b6 <LED_voidToggle+0x138>
+        	case (LED_31):
+        		DIO_voidTogglePin(LEDPIN_31);
+ 9ae:	8f e1       	ldi	r24, 0x1F	; 31
+ 9b0:	0e 94 38 02 	call	0x470	; 0x470 <DIO_voidTogglePin>
+        	break;
+ 9b4:	00 00       	nop
+
+	}
+
+
+}
+ 9b6:	00 00       	nop
+ 9b8:	0f 90       	pop	r0
+ 9ba:	df 91       	pop	r29
+ 9bc:	cf 91       	pop	r28
+ 9be:	08 95       	ret
+
+000009c0 <SWITCH_voidInitialize>:
+#include "SWITCH_priv.h"
+#include "SWITCH_config.h"
+#include "SWITCH_int.h"
+
+
+void SWITCH_voidInitialize(void){
+ 9c0:	cf 93       	push	r28
+ 9c2:	df 93       	push	r29
+ 9c4:	cd b7       	in	r28, 0x3d	; 61
+ 9c6:	de b7       	in	r29, 0x3e	; 62
+
+}
+ 9c8:	00 00       	nop
+ 9ca:	df 91       	pop	r29
+ 9cc:	cf 91       	pop	r28
+ 9ce:	08 95       	ret
+
+000009d0 <SWITCH_u8State>:
+
+u8 SWITCH_u8State(u8 SwitchNum){
+ 9d0:	cf 93       	push	r28
+ 9d2:	df 93       	push	r29
+ 9d4:	00 d0       	rcall	.+0      	; 0x9d6 <SWITCH_u8State+0x6>
+ 9d6:	cd b7       	in	r28, 0x3d	; 61
+ 9d8:	de b7       	in	r29, 0x3e	; 62
+ 9da:	8a 83       	std	Y+2, r24	; 0x02
+	u8 ret;
+
+	switch(SwitchNum){
+ 9dc:	8a 81       	ldd	r24, Y+2	; 0x02
+ 9de:	88 2f       	mov	r24, r24
+ 9e0:	90 e0       	ldi	r25, 0x00	; 0
+ 9e2:	09 2e       	mov	r0, r25
+ 9e4:	00 0c       	add	r0, r0
+ 9e6:	aa 0b       	sbc	r26, r26
+ 9e8:	bb 0b       	sbc	r27, r27
+ 9ea:	40 e0       	ldi	r20, 0x00	; 0
+ 9ec:	50 e0       	ldi	r21, 0x00	; 0
+ 9ee:	2f e1       	ldi	r18, 0x1F	; 31
+ 9f0:	30 e0       	ldi	r19, 0x00	; 0
+ 9f2:	84 1b       	sub	r24, r20
+ 9f4:	95 0b       	sbc	r25, r21
+ 9f6:	28 17       	cp	r18, r24
+ 9f8:	39 07       	cpc	r19, r25
+ 9fa:	08 f4       	brcc	.+2      	; 0x9fe <SWITCH_u8State+0x2e>
+ 9fc:	44 c2       	rjmp	.+1160   	; 0xe86 <SWITCH_u8State+0x4b6>
+ 9fe:	86 57       	subi	r24, 0x76	; 118
+ a00:	9f 4f       	sbci	r25, 0xFF	; 255
+ a02:	fc 01       	movw	r30, r24
+ a04:	0c 94 60 07 	jmp	0xec0	; 0xec0 <__tablejump2__>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_0)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_0_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_0)==HIGH){
+ a08:	80 e0       	ldi	r24, 0x00	; 0
+ a0a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a0e:	81 30       	cpi	r24, 0x01	; 1
+ a10:	11 f4       	brne	.+4      	; 0xa16 <SWITCH_u8State+0x46>
+				ret=OFF;
+ a12:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_0)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ a14:	f9 c1       	rjmp	.+1010   	; 0xe08 <SWITCH_u8State+0x438>
+				ret=OFF;
+			}
+		}else if(SWITCH_0_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_0)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_0)==LOW){
+ a16:	80 e0       	ldi	r24, 0x00	; 0
+ a18:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a1c:	88 23       	and	r24, r24
+ a1e:	09 f0       	breq	.+2      	; 0xa22 <SWITCH_u8State+0x52>
+ a20:	f3 c1       	rjmp	.+998    	; 0xe08 <SWITCH_u8State+0x438>
+				ret=ON;
+ a22:	81 e0       	ldi	r24, 0x01	; 1
+ a24:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ a26:	f0 c1       	rjmp	.+992    	; 0xe08 <SWITCH_u8State+0x438>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_1)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_1_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_1)==HIGH){
+ a28:	81 e0       	ldi	r24, 0x01	; 1
+ a2a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a2e:	81 30       	cpi	r24, 0x01	; 1
+ a30:	11 f4       	brne	.+4      	; 0xa36 <SWITCH_u8State+0x66>
+				ret=OFF;
+ a32:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_1)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ a34:	eb c1       	rjmp	.+982    	; 0xe0c <SWITCH_u8State+0x43c>
+				ret=OFF;
+			}
+		}else if(SWITCH_1_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_1)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_1)==LOW){
+ a36:	81 e0       	ldi	r24, 0x01	; 1
+ a38:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a3c:	88 23       	and	r24, r24
+ a3e:	09 f0       	breq	.+2      	; 0xa42 <SWITCH_u8State+0x72>
+ a40:	e5 c1       	rjmp	.+970    	; 0xe0c <SWITCH_u8State+0x43c>
+				ret=ON;
+ a42:	81 e0       	ldi	r24, 0x01	; 1
+ a44:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ a46:	e2 c1       	rjmp	.+964    	; 0xe0c <SWITCH_u8State+0x43c>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_2)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_2_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_2)==HIGH){
+ a48:	82 e0       	ldi	r24, 0x02	; 2
+ a4a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a4e:	81 30       	cpi	r24, 0x01	; 1
+ a50:	11 f4       	brne	.+4      	; 0xa56 <SWITCH_u8State+0x86>
+				ret=OFF;
+ a52:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_2)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ a54:	dd c1       	rjmp	.+954    	; 0xe10 <SWITCH_u8State+0x440>
+				ret=OFF;
+			}
+		}else if(SWITCH_2_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_2)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_2)==LOW){
+ a56:	82 e0       	ldi	r24, 0x02	; 2
+ a58:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a5c:	88 23       	and	r24, r24
+ a5e:	09 f0       	breq	.+2      	; 0xa62 <SWITCH_u8State+0x92>
+ a60:	d7 c1       	rjmp	.+942    	; 0xe10 <SWITCH_u8State+0x440>
+				ret=ON;
+ a62:	81 e0       	ldi	r24, 0x01	; 1
+ a64:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ a66:	d4 c1       	rjmp	.+936    	; 0xe10 <SWITCH_u8State+0x440>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_3)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_3_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_3)==HIGH){
+ a68:	83 e0       	ldi	r24, 0x03	; 3
+ a6a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a6e:	81 30       	cpi	r24, 0x01	; 1
+ a70:	11 f4       	brne	.+4      	; 0xa76 <SWITCH_u8State+0xa6>
+				ret=OFF;
+ a72:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_3)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ a74:	cf c1       	rjmp	.+926    	; 0xe14 <SWITCH_u8State+0x444>
+				ret=OFF;
+			}
+		}else if(SWITCH_3_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_3)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_3)==LOW){
+ a76:	83 e0       	ldi	r24, 0x03	; 3
+ a78:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a7c:	88 23       	and	r24, r24
+ a7e:	09 f0       	breq	.+2      	; 0xa82 <SWITCH_u8State+0xb2>
+ a80:	c9 c1       	rjmp	.+914    	; 0xe14 <SWITCH_u8State+0x444>
+				ret=ON;
+ a82:	81 e0       	ldi	r24, 0x01	; 1
+ a84:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ a86:	c6 c1       	rjmp	.+908    	; 0xe14 <SWITCH_u8State+0x444>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_4)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_4_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_4)==HIGH){
+ a88:	84 e0       	ldi	r24, 0x04	; 4
+ a8a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a8e:	81 30       	cpi	r24, 0x01	; 1
+ a90:	11 f4       	brne	.+4      	; 0xa96 <SWITCH_u8State+0xc6>
+				ret=OFF;
+ a92:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_4)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ a94:	c1 c1       	rjmp	.+898    	; 0xe18 <SWITCH_u8State+0x448>
+				ret=OFF;
+			}
+		}else if(SWITCH_4_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_4)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_4)==LOW){
+ a96:	84 e0       	ldi	r24, 0x04	; 4
+ a98:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ a9c:	88 23       	and	r24, r24
+ a9e:	09 f0       	breq	.+2      	; 0xaa2 <SWITCH_u8State+0xd2>
+ aa0:	bb c1       	rjmp	.+886    	; 0xe18 <SWITCH_u8State+0x448>
+				ret=ON;
+ aa2:	81 e0       	ldi	r24, 0x01	; 1
+ aa4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ aa6:	b8 c1       	rjmp	.+880    	; 0xe18 <SWITCH_u8State+0x448>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_5)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_5_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_5)==HIGH){
+ aa8:	85 e0       	ldi	r24, 0x05	; 5
+ aaa:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ aae:	81 30       	cpi	r24, 0x01	; 1
+ ab0:	11 f4       	brne	.+4      	; 0xab6 <SWITCH_u8State+0xe6>
+				ret=OFF;
+ ab2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_5)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ ab4:	b3 c1       	rjmp	.+870    	; 0xe1c <SWITCH_u8State+0x44c>
+				ret=OFF;
+			}
+		}else if(SWITCH_5_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_5)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_5)==LOW){
+ ab6:	85 e0       	ldi	r24, 0x05	; 5
+ ab8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ abc:	88 23       	and	r24, r24
+ abe:	09 f0       	breq	.+2      	; 0xac2 <SWITCH_u8State+0xf2>
+ ac0:	ad c1       	rjmp	.+858    	; 0xe1c <SWITCH_u8State+0x44c>
+				ret=ON;
+ ac2:	81 e0       	ldi	r24, 0x01	; 1
+ ac4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ ac6:	aa c1       	rjmp	.+852    	; 0xe1c <SWITCH_u8State+0x44c>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_6)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_6_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_6)==HIGH){
+ ac8:	86 e0       	ldi	r24, 0x06	; 6
+ aca:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ ace:	81 30       	cpi	r24, 0x01	; 1
+ ad0:	11 f4       	brne	.+4      	; 0xad6 <SWITCH_u8State+0x106>
+				ret=OFF;
+ ad2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_6)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ ad4:	a5 c1       	rjmp	.+842    	; 0xe20 <SWITCH_u8State+0x450>
+				ret=OFF;
+			}
+		}else if(SWITCH_6_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_6)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_6)==LOW){
+ ad6:	86 e0       	ldi	r24, 0x06	; 6
+ ad8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ adc:	88 23       	and	r24, r24
+ ade:	09 f0       	breq	.+2      	; 0xae2 <SWITCH_u8State+0x112>
+ ae0:	9f c1       	rjmp	.+830    	; 0xe20 <SWITCH_u8State+0x450>
+				ret=ON;
+ ae2:	81 e0       	ldi	r24, 0x01	; 1
+ ae4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ ae6:	9c c1       	rjmp	.+824    	; 0xe20 <SWITCH_u8State+0x450>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_7)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_7_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_7)==HIGH){
+ ae8:	87 e0       	ldi	r24, 0x07	; 7
+ aea:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ aee:	81 30       	cpi	r24, 0x01	; 1
+ af0:	11 f4       	brne	.+4      	; 0xaf6 <SWITCH_u8State+0x126>
+				ret=OFF;
+ af2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_7)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ af4:	97 c1       	rjmp	.+814    	; 0xe24 <SWITCH_u8State+0x454>
+				ret=OFF;
+			}
+		}else if(SWITCH_7_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_7)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_7)==LOW){
+ af6:	87 e0       	ldi	r24, 0x07	; 7
+ af8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ afc:	88 23       	and	r24, r24
+ afe:	09 f0       	breq	.+2      	; 0xb02 <SWITCH_u8State+0x132>
+ b00:	91 c1       	rjmp	.+802    	; 0xe24 <SWITCH_u8State+0x454>
+				ret=ON;
+ b02:	81 e0       	ldi	r24, 0x01	; 1
+ b04:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ b06:	8e c1       	rjmp	.+796    	; 0xe24 <SWITCH_u8State+0x454>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_8)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_8_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_8)==HIGH){
+ b08:	88 e0       	ldi	r24, 0x08	; 8
+ b0a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b0e:	81 30       	cpi	r24, 0x01	; 1
+ b10:	11 f4       	brne	.+4      	; 0xb16 <SWITCH_u8State+0x146>
+				ret=OFF;
+ b12:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_8)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ b14:	89 c1       	rjmp	.+786    	; 0xe28 <SWITCH_u8State+0x458>
+				ret=OFF;
+			}
+		}else if(SWITCH_8_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_8)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_8)==LOW){
+ b16:	88 e0       	ldi	r24, 0x08	; 8
+ b18:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b1c:	88 23       	and	r24, r24
+ b1e:	09 f0       	breq	.+2      	; 0xb22 <SWITCH_u8State+0x152>
+ b20:	83 c1       	rjmp	.+774    	; 0xe28 <SWITCH_u8State+0x458>
+				ret=ON;
+ b22:	81 e0       	ldi	r24, 0x01	; 1
+ b24:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ b26:	80 c1       	rjmp	.+768    	; 0xe28 <SWITCH_u8State+0x458>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_9)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_9_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_9)==HIGH){
+ b28:	89 e0       	ldi	r24, 0x09	; 9
+ b2a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b2e:	81 30       	cpi	r24, 0x01	; 1
+ b30:	11 f4       	brne	.+4      	; 0xb36 <SWITCH_u8State+0x166>
+				ret=OFF;
+ b32:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_9)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ b34:	7b c1       	rjmp	.+758    	; 0xe2c <SWITCH_u8State+0x45c>
+				ret=OFF;
+			}
+		}else if(SWITCH_9_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_9)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_9)==LOW){
+ b36:	89 e0       	ldi	r24, 0x09	; 9
+ b38:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b3c:	88 23       	and	r24, r24
+ b3e:	09 f0       	breq	.+2      	; 0xb42 <SWITCH_u8State+0x172>
+ b40:	75 c1       	rjmp	.+746    	; 0xe2c <SWITCH_u8State+0x45c>
+				ret=ON;
+ b42:	81 e0       	ldi	r24, 0x01	; 1
+ b44:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ b46:	72 c1       	rjmp	.+740    	; 0xe2c <SWITCH_u8State+0x45c>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_10)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_10_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_10)==HIGH){
+ b48:	8a e0       	ldi	r24, 0x0A	; 10
+ b4a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b4e:	81 30       	cpi	r24, 0x01	; 1
+ b50:	11 f4       	brne	.+4      	; 0xb56 <SWITCH_u8State+0x186>
+				ret=OFF;
+ b52:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_10)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ b54:	6d c1       	rjmp	.+730    	; 0xe30 <SWITCH_u8State+0x460>
+				ret=OFF;
+			}
+		}else if(SWITCH_10_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_10)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_10)==LOW){
+ b56:	8a e0       	ldi	r24, 0x0A	; 10
+ b58:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b5c:	88 23       	and	r24, r24
+ b5e:	09 f0       	breq	.+2      	; 0xb62 <SWITCH_u8State+0x192>
+ b60:	67 c1       	rjmp	.+718    	; 0xe30 <SWITCH_u8State+0x460>
+				ret=ON;
+ b62:	81 e0       	ldi	r24, 0x01	; 1
+ b64:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ b66:	64 c1       	rjmp	.+712    	; 0xe30 <SWITCH_u8State+0x460>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_11)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_11_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_11)==HIGH){
+ b68:	8b e0       	ldi	r24, 0x0B	; 11
+ b6a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b6e:	81 30       	cpi	r24, 0x01	; 1
+ b70:	11 f4       	brne	.+4      	; 0xb76 <SWITCH_u8State+0x1a6>
+				ret=OFF;
+ b72:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_11)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ b74:	5f c1       	rjmp	.+702    	; 0xe34 <SWITCH_u8State+0x464>
+				ret=OFF;
+			}
+		}else if(SWITCH_11_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_11)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_11)==LOW){
+ b76:	8b e0       	ldi	r24, 0x0B	; 11
+ b78:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b7c:	88 23       	and	r24, r24
+ b7e:	09 f0       	breq	.+2      	; 0xb82 <SWITCH_u8State+0x1b2>
+ b80:	59 c1       	rjmp	.+690    	; 0xe34 <SWITCH_u8State+0x464>
+				ret=ON;
+ b82:	81 e0       	ldi	r24, 0x01	; 1
+ b84:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ b86:	56 c1       	rjmp	.+684    	; 0xe34 <SWITCH_u8State+0x464>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_12)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_12_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_12)==HIGH){
+ b88:	8c e0       	ldi	r24, 0x0C	; 12
+ b8a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b8e:	81 30       	cpi	r24, 0x01	; 1
+ b90:	11 f4       	brne	.+4      	; 0xb96 <SWITCH_u8State+0x1c6>
+				ret=OFF;
+ b92:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_12)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ b94:	51 c1       	rjmp	.+674    	; 0xe38 <SWITCH_u8State+0x468>
+				ret=OFF;
+			}
+		}else if(SWITCH_12_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_12)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_12)==LOW){
+ b96:	8c e0       	ldi	r24, 0x0C	; 12
+ b98:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ b9c:	88 23       	and	r24, r24
+ b9e:	09 f0       	breq	.+2      	; 0xba2 <SWITCH_u8State+0x1d2>
+ ba0:	4b c1       	rjmp	.+662    	; 0xe38 <SWITCH_u8State+0x468>
+				ret=ON;
+ ba2:	81 e0       	ldi	r24, 0x01	; 1
+ ba4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ ba6:	48 c1       	rjmp	.+656    	; 0xe38 <SWITCH_u8State+0x468>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_13)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_13_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_13)==HIGH){
+ ba8:	8d e0       	ldi	r24, 0x0D	; 13
+ baa:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ bae:	81 30       	cpi	r24, 0x01	; 1
+ bb0:	11 f4       	brne	.+4      	; 0xbb6 <SWITCH_u8State+0x1e6>
+				ret=OFF;
+ bb2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_13)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ bb4:	43 c1       	rjmp	.+646    	; 0xe3c <SWITCH_u8State+0x46c>
+				ret=OFF;
+			}
+		}else if(SWITCH_13_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_13)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_13)==LOW){
+ bb6:	8d e0       	ldi	r24, 0x0D	; 13
+ bb8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ bbc:	88 23       	and	r24, r24
+ bbe:	09 f0       	breq	.+2      	; 0xbc2 <SWITCH_u8State+0x1f2>
+ bc0:	3d c1       	rjmp	.+634    	; 0xe3c <SWITCH_u8State+0x46c>
+				ret=ON;
+ bc2:	81 e0       	ldi	r24, 0x01	; 1
+ bc4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ bc6:	3a c1       	rjmp	.+628    	; 0xe3c <SWITCH_u8State+0x46c>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_14)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_14_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_14)==HIGH){
+ bc8:	8e e0       	ldi	r24, 0x0E	; 14
+ bca:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ bce:	81 30       	cpi	r24, 0x01	; 1
+ bd0:	11 f4       	brne	.+4      	; 0xbd6 <SWITCH_u8State+0x206>
+				ret=OFF;
+ bd2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_14)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ bd4:	35 c1       	rjmp	.+618    	; 0xe40 <SWITCH_u8State+0x470>
+				ret=OFF;
+			}
+		}else if(SWITCH_14_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_14)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_14)==LOW){
+ bd6:	8e e0       	ldi	r24, 0x0E	; 14
+ bd8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ bdc:	88 23       	and	r24, r24
+ bde:	09 f0       	breq	.+2      	; 0xbe2 <SWITCH_u8State+0x212>
+ be0:	2f c1       	rjmp	.+606    	; 0xe40 <SWITCH_u8State+0x470>
+				ret=ON;
+ be2:	81 e0       	ldi	r24, 0x01	; 1
+ be4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ be6:	2c c1       	rjmp	.+600    	; 0xe40 <SWITCH_u8State+0x470>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_15)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_15_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_15)==HIGH){
+ be8:	8f e0       	ldi	r24, 0x0F	; 15
+ bea:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ bee:	81 30       	cpi	r24, 0x01	; 1
+ bf0:	11 f4       	brne	.+4      	; 0xbf6 <SWITCH_u8State+0x226>
+				ret=OFF;
+ bf2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_15)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ bf4:	27 c1       	rjmp	.+590    	; 0xe44 <SWITCH_u8State+0x474>
+				ret=OFF;
+			}
+		}else if(SWITCH_15_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_15)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_15)==LOW){
+ bf6:	8f e0       	ldi	r24, 0x0F	; 15
+ bf8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ bfc:	88 23       	and	r24, r24
+ bfe:	09 f0       	breq	.+2      	; 0xc02 <SWITCH_u8State+0x232>
+ c00:	21 c1       	rjmp	.+578    	; 0xe44 <SWITCH_u8State+0x474>
+				ret=ON;
+ c02:	81 e0       	ldi	r24, 0x01	; 1
+ c04:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ c06:	1e c1       	rjmp	.+572    	; 0xe44 <SWITCH_u8State+0x474>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_16)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_16_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_16)==HIGH){
+ c08:	80 e1       	ldi	r24, 0x10	; 16
+ c0a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c0e:	81 30       	cpi	r24, 0x01	; 1
+ c10:	11 f4       	brne	.+4      	; 0xc16 <SWITCH_u8State+0x246>
+				ret=OFF;
+ c12:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_16)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ c14:	19 c1       	rjmp	.+562    	; 0xe48 <SWITCH_u8State+0x478>
+				ret=OFF;
+			}
+		}else if(SWITCH_16_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_16)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_16)==LOW){
+ c16:	80 e1       	ldi	r24, 0x10	; 16
+ c18:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c1c:	88 23       	and	r24, r24
+ c1e:	09 f0       	breq	.+2      	; 0xc22 <SWITCH_u8State+0x252>
+ c20:	13 c1       	rjmp	.+550    	; 0xe48 <SWITCH_u8State+0x478>
+				ret=ON;
+ c22:	81 e0       	ldi	r24, 0x01	; 1
+ c24:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ c26:	10 c1       	rjmp	.+544    	; 0xe48 <SWITCH_u8State+0x478>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_17)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_17_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_17)==HIGH){
+ c28:	81 e1       	ldi	r24, 0x11	; 17
+ c2a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c2e:	81 30       	cpi	r24, 0x01	; 1
+ c30:	11 f4       	brne	.+4      	; 0xc36 <SWITCH_u8State+0x266>
+				ret=OFF;
+ c32:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_17)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ c34:	0b c1       	rjmp	.+534    	; 0xe4c <SWITCH_u8State+0x47c>
+				ret=OFF;
+			}
+		}else if(SWITCH_17_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_17)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_17)==LOW){
+ c36:	81 e1       	ldi	r24, 0x11	; 17
+ c38:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c3c:	88 23       	and	r24, r24
+ c3e:	09 f0       	breq	.+2      	; 0xc42 <SWITCH_u8State+0x272>
+ c40:	05 c1       	rjmp	.+522    	; 0xe4c <SWITCH_u8State+0x47c>
+				ret=ON;
+ c42:	81 e0       	ldi	r24, 0x01	; 1
+ c44:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ c46:	02 c1       	rjmp	.+516    	; 0xe4c <SWITCH_u8State+0x47c>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_18)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_18_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_18)==HIGH){
+ c48:	82 e1       	ldi	r24, 0x12	; 18
+ c4a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c4e:	81 30       	cpi	r24, 0x01	; 1
+ c50:	11 f4       	brne	.+4      	; 0xc56 <SWITCH_u8State+0x286>
+				ret=OFF;
+ c52:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_18)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ c54:	fd c0       	rjmp	.+506    	; 0xe50 <SWITCH_u8State+0x480>
+				ret=OFF;
+			}
+		}else if(SWITCH_18_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_18)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_18)==LOW){
+ c56:	82 e1       	ldi	r24, 0x12	; 18
+ c58:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c5c:	88 23       	and	r24, r24
+ c5e:	09 f0       	breq	.+2      	; 0xc62 <SWITCH_u8State+0x292>
+ c60:	f7 c0       	rjmp	.+494    	; 0xe50 <SWITCH_u8State+0x480>
+				ret=ON;
+ c62:	81 e0       	ldi	r24, 0x01	; 1
+ c64:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ c66:	f4 c0       	rjmp	.+488    	; 0xe50 <SWITCH_u8State+0x480>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_19)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_19_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_19)==HIGH){
+ c68:	83 e1       	ldi	r24, 0x13	; 19
+ c6a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c6e:	81 30       	cpi	r24, 0x01	; 1
+ c70:	11 f4       	brne	.+4      	; 0xc76 <SWITCH_u8State+0x2a6>
+				ret=OFF;
+ c72:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_19)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ c74:	ef c0       	rjmp	.+478    	; 0xe54 <SWITCH_u8State+0x484>
+				ret=OFF;
+			}
+		}else if(SWITCH_19_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_19)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_19)==LOW){
+ c76:	83 e1       	ldi	r24, 0x13	; 19
+ c78:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c7c:	88 23       	and	r24, r24
+ c7e:	09 f0       	breq	.+2      	; 0xc82 <SWITCH_u8State+0x2b2>
+ c80:	e9 c0       	rjmp	.+466    	; 0xe54 <SWITCH_u8State+0x484>
+				ret=ON;
+ c82:	81 e0       	ldi	r24, 0x01	; 1
+ c84:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ c86:	e6 c0       	rjmp	.+460    	; 0xe54 <SWITCH_u8State+0x484>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_20)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_20_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_20)==HIGH){
+ c88:	84 e1       	ldi	r24, 0x14	; 20
+ c8a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c8e:	81 30       	cpi	r24, 0x01	; 1
+ c90:	11 f4       	brne	.+4      	; 0xc96 <SWITCH_u8State+0x2c6>
+				ret=OFF;
+ c92:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_20)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ c94:	e1 c0       	rjmp	.+450    	; 0xe58 <SWITCH_u8State+0x488>
+				ret=OFF;
+			}
+		}else if(SWITCH_20_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_20)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_20)==LOW){
+ c96:	84 e1       	ldi	r24, 0x14	; 20
+ c98:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ c9c:	88 23       	and	r24, r24
+ c9e:	09 f0       	breq	.+2      	; 0xca2 <SWITCH_u8State+0x2d2>
+ ca0:	db c0       	rjmp	.+438    	; 0xe58 <SWITCH_u8State+0x488>
+				ret=ON;
+ ca2:	81 e0       	ldi	r24, 0x01	; 1
+ ca4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ ca6:	d8 c0       	rjmp	.+432    	; 0xe58 <SWITCH_u8State+0x488>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_21)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_21_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_21)==HIGH){
+ ca8:	85 e1       	ldi	r24, 0x15	; 21
+ caa:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ cae:	81 30       	cpi	r24, 0x01	; 1
+ cb0:	11 f4       	brne	.+4      	; 0xcb6 <SWITCH_u8State+0x2e6>
+				ret=OFF;
+ cb2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_21)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ cb4:	d3 c0       	rjmp	.+422    	; 0xe5c <SWITCH_u8State+0x48c>
+				ret=OFF;
+			}
+		}else if(SWITCH_21_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_21)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_21)==LOW){
+ cb6:	85 e1       	ldi	r24, 0x15	; 21
+ cb8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ cbc:	88 23       	and	r24, r24
+ cbe:	09 f0       	breq	.+2      	; 0xcc2 <SWITCH_u8State+0x2f2>
+ cc0:	cd c0       	rjmp	.+410    	; 0xe5c <SWITCH_u8State+0x48c>
+				ret=ON;
+ cc2:	81 e0       	ldi	r24, 0x01	; 1
+ cc4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ cc6:	ca c0       	rjmp	.+404    	; 0xe5c <SWITCH_u8State+0x48c>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_22)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_22_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_22)==HIGH){
+ cc8:	86 e1       	ldi	r24, 0x16	; 22
+ cca:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ cce:	81 30       	cpi	r24, 0x01	; 1
+ cd0:	11 f4       	brne	.+4      	; 0xcd6 <SWITCH_u8State+0x306>
+				ret=OFF;
+ cd2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_22)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ cd4:	c5 c0       	rjmp	.+394    	; 0xe60 <SWITCH_u8State+0x490>
+				ret=OFF;
+			}
+		}else if(SWITCH_22_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_22)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_22)==LOW){
+ cd6:	86 e1       	ldi	r24, 0x16	; 22
+ cd8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ cdc:	88 23       	and	r24, r24
+ cde:	09 f0       	breq	.+2      	; 0xce2 <SWITCH_u8State+0x312>
+ ce0:	bf c0       	rjmp	.+382    	; 0xe60 <SWITCH_u8State+0x490>
+				ret=ON;
+ ce2:	81 e0       	ldi	r24, 0x01	; 1
+ ce4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ ce6:	bc c0       	rjmp	.+376    	; 0xe60 <SWITCH_u8State+0x490>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_23)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_23_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_23)==HIGH){
+ ce8:	87 e1       	ldi	r24, 0x17	; 23
+ cea:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ cee:	81 30       	cpi	r24, 0x01	; 1
+ cf0:	11 f4       	brne	.+4      	; 0xcf6 <SWITCH_u8State+0x326>
+				ret=OFF;
+ cf2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_23)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ cf4:	b7 c0       	rjmp	.+366    	; 0xe64 <SWITCH_u8State+0x494>
+				ret=OFF;
+			}
+		}else if(SWITCH_23_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_23)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_23)==LOW){
+ cf6:	87 e1       	ldi	r24, 0x17	; 23
+ cf8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ cfc:	88 23       	and	r24, r24
+ cfe:	09 f0       	breq	.+2      	; 0xd02 <SWITCH_u8State+0x332>
+ d00:	b1 c0       	rjmp	.+354    	; 0xe64 <SWITCH_u8State+0x494>
+				ret=ON;
+ d02:	81 e0       	ldi	r24, 0x01	; 1
+ d04:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ d06:	ae c0       	rjmp	.+348    	; 0xe64 <SWITCH_u8State+0x494>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_24)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_24_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_24)==HIGH){
+ d08:	88 e1       	ldi	r24, 0x18	; 24
+ d0a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d0e:	81 30       	cpi	r24, 0x01	; 1
+ d10:	11 f4       	brne	.+4      	; 0xd16 <SWITCH_u8State+0x346>
+				ret=OFF;
+ d12:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_24)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ d14:	a9 c0       	rjmp	.+338    	; 0xe68 <SWITCH_u8State+0x498>
+				ret=OFF;
+			}
+		}else if(SWITCH_24_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_24)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_24)==LOW){
+ d16:	88 e1       	ldi	r24, 0x18	; 24
+ d18:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d1c:	88 23       	and	r24, r24
+ d1e:	09 f0       	breq	.+2      	; 0xd22 <SWITCH_u8State+0x352>
+ d20:	a3 c0       	rjmp	.+326    	; 0xe68 <SWITCH_u8State+0x498>
+				ret=ON;
+ d22:	81 e0       	ldi	r24, 0x01	; 1
+ d24:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ d26:	a0 c0       	rjmp	.+320    	; 0xe68 <SWITCH_u8State+0x498>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_25)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_25_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_25)==HIGH){
+ d28:	89 e1       	ldi	r24, 0x19	; 25
+ d2a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d2e:	81 30       	cpi	r24, 0x01	; 1
+ d30:	11 f4       	brne	.+4      	; 0xd36 <SWITCH_u8State+0x366>
+				ret=OFF;
+ d32:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_25)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ d34:	9b c0       	rjmp	.+310    	; 0xe6c <SWITCH_u8State+0x49c>
+				ret=OFF;
+			}
+		}else if(SWITCH_25_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_25)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_25)==LOW){
+ d36:	89 e1       	ldi	r24, 0x19	; 25
+ d38:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d3c:	88 23       	and	r24, r24
+ d3e:	09 f0       	breq	.+2      	; 0xd42 <SWITCH_u8State+0x372>
+ d40:	95 c0       	rjmp	.+298    	; 0xe6c <SWITCH_u8State+0x49c>
+				ret=ON;
+ d42:	81 e0       	ldi	r24, 0x01	; 1
+ d44:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ d46:	92 c0       	rjmp	.+292    	; 0xe6c <SWITCH_u8State+0x49c>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_26)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_26_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_26)==HIGH){
+ d48:	8a e1       	ldi	r24, 0x1A	; 26
+ d4a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d4e:	81 30       	cpi	r24, 0x01	; 1
+ d50:	11 f4       	brne	.+4      	; 0xd56 <SWITCH_u8State+0x386>
+				ret=OFF;
+ d52:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_26)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ d54:	8d c0       	rjmp	.+282    	; 0xe70 <SWITCH_u8State+0x4a0>
+				ret=OFF;
+			}
+		}else if(SWITCH_26_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_26)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_26)==LOW){
+ d56:	8a e1       	ldi	r24, 0x1A	; 26
+ d58:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d5c:	88 23       	and	r24, r24
+ d5e:	09 f0       	breq	.+2      	; 0xd62 <SWITCH_u8State+0x392>
+ d60:	87 c0       	rjmp	.+270    	; 0xe70 <SWITCH_u8State+0x4a0>
+				ret=ON;
+ d62:	81 e0       	ldi	r24, 0x01	; 1
+ d64:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ d66:	84 c0       	rjmp	.+264    	; 0xe70 <SWITCH_u8State+0x4a0>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_27)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_27_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_27)==HIGH){
+ d68:	8b e1       	ldi	r24, 0x1B	; 27
+ d6a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d6e:	81 30       	cpi	r24, 0x01	; 1
+ d70:	11 f4       	brne	.+4      	; 0xd76 <SWITCH_u8State+0x3a6>
+				ret=OFF;
+ d72:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_27)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ d74:	7f c0       	rjmp	.+254    	; 0xe74 <SWITCH_u8State+0x4a4>
+				ret=OFF;
+			}
+		}else if(SWITCH_27_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_27)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_27)==LOW){
+ d76:	8b e1       	ldi	r24, 0x1B	; 27
+ d78:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d7c:	88 23       	and	r24, r24
+ d7e:	09 f0       	breq	.+2      	; 0xd82 <SWITCH_u8State+0x3b2>
+ d80:	79 c0       	rjmp	.+242    	; 0xe74 <SWITCH_u8State+0x4a4>
+				ret=ON;
+ d82:	81 e0       	ldi	r24, 0x01	; 1
+ d84:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ d86:	76 c0       	rjmp	.+236    	; 0xe74 <SWITCH_u8State+0x4a4>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_28)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_28_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_28)==HIGH){
+ d88:	8c e1       	ldi	r24, 0x1C	; 28
+ d8a:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d8e:	81 30       	cpi	r24, 0x01	; 1
+ d90:	11 f4       	brne	.+4      	; 0xd96 <SWITCH_u8State+0x3c6>
+				ret=OFF;
+ d92:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_28)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ d94:	71 c0       	rjmp	.+226    	; 0xe78 <SWITCH_u8State+0x4a8>
+				ret=OFF;
+			}
+		}else if(SWITCH_28_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_28)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_28)==LOW){
+ d96:	8c e1       	ldi	r24, 0x1C	; 28
+ d98:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ d9c:	88 23       	and	r24, r24
+ d9e:	09 f0       	breq	.+2      	; 0xda2 <SWITCH_u8State+0x3d2>
+ da0:	6b c0       	rjmp	.+214    	; 0xe78 <SWITCH_u8State+0x4a8>
+				ret=ON;
+ da2:	81 e0       	ldi	r24, 0x01	; 1
+ da4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ da6:	68 c0       	rjmp	.+208    	; 0xe78 <SWITCH_u8State+0x4a8>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_29)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_29_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_29)==HIGH){
+ da8:	8d e1       	ldi	r24, 0x1D	; 29
+ daa:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ dae:	81 30       	cpi	r24, 0x01	; 1
+ db0:	11 f4       	brne	.+4      	; 0xdb6 <SWITCH_u8State+0x3e6>
+				ret=OFF;
+ db2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_29)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ db4:	63 c0       	rjmp	.+198    	; 0xe7c <SWITCH_u8State+0x4ac>
+				ret=OFF;
+			}
+		}else if(SWITCH_29_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_29)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_29)==LOW){
+ db6:	8d e1       	ldi	r24, 0x1D	; 29
+ db8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ dbc:	88 23       	and	r24, r24
+ dbe:	09 f0       	breq	.+2      	; 0xdc2 <SWITCH_u8State+0x3f2>
+ dc0:	5d c0       	rjmp	.+186    	; 0xe7c <SWITCH_u8State+0x4ac>
+				ret=ON;
+ dc2:	81 e0       	ldi	r24, 0x01	; 1
+ dc4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ dc6:	5a c0       	rjmp	.+180    	; 0xe7c <SWITCH_u8State+0x4ac>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_30)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_30_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_30)==HIGH){
+ dc8:	8e e1       	ldi	r24, 0x1E	; 30
+ dca:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ dce:	81 30       	cpi	r24, 0x01	; 1
+ dd0:	11 f4       	brne	.+4      	; 0xdd6 <SWITCH_u8State+0x406>
+				ret=OFF;
+ dd2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_30)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ dd4:	55 c0       	rjmp	.+170    	; 0xe80 <SWITCH_u8State+0x4b0>
+				ret=OFF;
+			}
+		}else if(SWITCH_30_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_30)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_30)==LOW){
+ dd6:	8e e1       	ldi	r24, 0x1E	; 30
+ dd8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ ddc:	88 23       	and	r24, r24
+ dde:	09 f0       	breq	.+2      	; 0xde2 <SWITCH_u8State+0x412>
+ de0:	4f c0       	rjmp	.+158    	; 0xe80 <SWITCH_u8State+0x4b0>
+				ret=ON;
+ de2:	81 e0       	ldi	r24, 0x01	; 1
+ de4:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ de6:	4c c0       	rjmp	.+152    	; 0xe80 <SWITCH_u8State+0x4b0>
+				ret=ON;
+			}else if(DIO_u8GetPin(SWITCHPIN_31)==LOW){
+				ret=OFF;
+			}
+		}else if(SWITCH_31_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_31)==HIGH){
+ de8:	8f e1       	ldi	r24, 0x1F	; 31
+ dea:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ dee:	81 30       	cpi	r24, 0x01	; 1
+ df0:	11 f4       	brne	.+4      	; 0xdf6 <SWITCH_u8State+0x426>
+				ret=OFF;
+ df2:	19 82       	std	Y+1, r1	; 0x01
+			}else if(DIO_u8GetPin(SWITCHPIN_31)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ df4:	47 c0       	rjmp	.+142    	; 0xe84 <SWITCH_u8State+0x4b4>
+				ret=OFF;
+			}
+		}else if(SWITCH_31_mode==PULLUP){
+			if(DIO_u8GetPin(SWITCHPIN_31)==HIGH){
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_31)==LOW){
+ df6:	8f e1       	ldi	r24, 0x1F	; 31
+ df8:	0e 94 ce 01 	call	0x39c	; 0x39c <DIO_u8GetPin>
+ dfc:	88 23       	and	r24, r24
+ dfe:	09 f0       	breq	.+2      	; 0xe02 <SWITCH_u8State+0x432>
+ e00:	41 c0       	rjmp	.+130    	; 0xe84 <SWITCH_u8State+0x4b4>
+				ret=ON;
+ e02:	81 e0       	ldi	r24, 0x01	; 1
+ e04:	89 83       	std	Y+1, r24	; 0x01
+			}
+		}
+	break;
+ e06:	3e c0       	rjmp	.+124    	; 0xe84 <SWITCH_u8State+0x4b4>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_0)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e08:	00 00       	nop
+ e0a:	3d c0       	rjmp	.+122    	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_1)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e0c:	00 00       	nop
+ e0e:	3b c0       	rjmp	.+118    	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_2)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e10:	00 00       	nop
+ e12:	39 c0       	rjmp	.+114    	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_3)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e14:	00 00       	nop
+ e16:	37 c0       	rjmp	.+110    	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_4)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e18:	00 00       	nop
+ e1a:	35 c0       	rjmp	.+106    	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_5)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e1c:	00 00       	nop
+ e1e:	33 c0       	rjmp	.+102    	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_6)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e20:	00 00       	nop
+ e22:	31 c0       	rjmp	.+98     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_7)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e24:	00 00       	nop
+ e26:	2f c0       	rjmp	.+94     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_8)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e28:	00 00       	nop
+ e2a:	2d c0       	rjmp	.+90     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_9)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e2c:	00 00       	nop
+ e2e:	2b c0       	rjmp	.+86     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_10)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e30:	00 00       	nop
+ e32:	29 c0       	rjmp	.+82     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_11)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e34:	00 00       	nop
+ e36:	27 c0       	rjmp	.+78     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_12)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e38:	00 00       	nop
+ e3a:	25 c0       	rjmp	.+74     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_13)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e3c:	00 00       	nop
+ e3e:	23 c0       	rjmp	.+70     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_14)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e40:	00 00       	nop
+ e42:	21 c0       	rjmp	.+66     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_15)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e44:	00 00       	nop
+ e46:	1f c0       	rjmp	.+62     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_16)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e48:	00 00       	nop
+ e4a:	1d c0       	rjmp	.+58     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_17)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e4c:	00 00       	nop
+ e4e:	1b c0       	rjmp	.+54     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_18)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e50:	00 00       	nop
+ e52:	19 c0       	rjmp	.+50     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_19)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e54:	00 00       	nop
+ e56:	17 c0       	rjmp	.+46     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_20)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e58:	00 00       	nop
+ e5a:	15 c0       	rjmp	.+42     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_21)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e5c:	00 00       	nop
+ e5e:	13 c0       	rjmp	.+38     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_22)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e60:	00 00       	nop
+ e62:	11 c0       	rjmp	.+34     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_23)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e64:	00 00       	nop
+ e66:	0f c0       	rjmp	.+30     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_24)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e68:	00 00       	nop
+ e6a:	0d c0       	rjmp	.+26     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_25)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e6c:	00 00       	nop
+ e6e:	0b c0       	rjmp	.+22     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_26)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e70:	00 00       	nop
+ e72:	09 c0       	rjmp	.+18     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_27)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e74:	00 00       	nop
+ e76:	07 c0       	rjmp	.+14     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_28)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e78:	00 00       	nop
+ e7a:	05 c0       	rjmp	.+10     	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_29)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e7c:	00 00       	nop
+ e7e:	03 c0       	rjmp	.+6      	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_30)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e80:	00 00       	nop
+ e82:	01 c0       	rjmp	.+2      	; 0xe86 <SWITCH_u8State+0x4b6>
+				ret=OFF;
+			}else if(DIO_u8GetPin(SWITCHPIN_31)==LOW){
+				ret=ON;
+			}
+		}
+	break;
+ e84:	00 00       	nop
+
+
+	}
+
+	return ret;
+ e86:	89 81       	ldd	r24, Y+1	; 0x01
+}
+ e88:	0f 90       	pop	r0
+ e8a:	0f 90       	pop	r0
+ e8c:	df 91       	pop	r29
+ e8e:	cf 91       	pop	r28
+ e90:	08 95       	ret
+
+00000e92 <main>:
+#include "SWITCH_int.h"
+#include "avr/delay.h"
+
+
+
+int main(void){
+ e92:	cf 93       	push	r28
+ e94:	df 93       	push	r29
+ e96:	cd b7       	in	r28, 0x3d	; 61
+ e98:	de b7       	in	r29, 0x3e	; 62
+	DIO_voidInitialize();
+ e9a:	0e 94 b6 00 	call	0x16c	; 0x16c <DIO_voidInitialize>
+	LED_voidInitialize();
+ e9e:	0e 94 b5 02 	call	0x56a	; 0x56a <LED_voidInitialize>
+	SWITCH_voidInitialize();
+ ea2:	0e 94 e0 04 	call	0x9c0	; 0x9c0 <SWITCH_voidInitialize>
+	while(1){
+		if(SWITCH_u8State(SWITCH_8)==ON){
+ ea6:	88 e0       	ldi	r24, 0x08	; 8
+ ea8:	0e 94 e8 04 	call	0x9d0	; 0x9d0 <SWITCH_u8State>
+ eac:	81 30       	cpi	r24, 0x01	; 1
+ eae:	21 f4       	brne	.+8      	; 0xeb8 <main+0x26>
+			LED_voidON(LED_0);
+ eb0:	80 e0       	ldi	r24, 0x00	; 0
+ eb2:	0e 94 bd 02 	call	0x57a	; 0x57a <LED_voidON>
+ eb6:	f7 cf       	rjmp	.-18     	; 0xea6 <main+0x14>
+		}else{
+			LED_voidOff(LED_0);
+ eb8:	80 e0       	ldi	r24, 0x00	; 0
+ eba:	0e 94 7e 03 	call	0x6fc	; 0x6fc <LED_voidOff>
+		}
+
+	}
+ ebe:	f3 cf       	rjmp	.-26     	; 0xea6 <main+0x14>
+
+00000ec0 <__tablejump2__>:
+ ec0:	ee 0f       	add	r30, r30
+ ec2:	ff 1f       	adc	r31, r31
+ ec4:	05 90       	lpm	r0, Z+
+ ec6:	f4 91       	lpm	r31, Z
+ ec8:	e0 2d       	mov	r30, r0
+ eca:	09 94       	ijmp
+
+00000ecc <_exit>:
+ ecc:	f8 94       	cli
+
+00000ece <__stop_program>:
+ ece:	ff cf       	rjmp	.-2      	; 0xece <__stop_program>
